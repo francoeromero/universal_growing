@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>UNIVERSAL GROWING</title>
+<meta name="viewport" content="width = 1050, user-scalable = no" />
+
+<!-- font -->
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<!-- font -->
+<!-- turnjs -->
+<script type="text/javascript" src="./extras/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/hash.js"></script>
+<script type="text/javascript" src="./lib/turn.min.js"></script>
+<script type="text/javascript" src="./lib/zoom.min.js"></script>
+<script type="text/javascript" src="js/magazine.js"></script>
+<!-- turnjs -->
+<!-- icon bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- icon bootstrap -->
+<link rel="icon" href="./img/icon_pestaña_nav.png">
+<link rel="stylesheet" href="./css/magazine.css">
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+<div id="canvas" class="canvas">
+
+
+<div class="zoom-icon zoom-icon-in"></div>
+
+<div class="magazine-viewport">
+		<!-- contacto -->
+		<div class="contacto" >
+			<a class="wp" href="https://wa.me/5491150206254" style="display: flex;" target="_blank">
+				<p>Contáctanos por Whatsapp 
+					<!-- <i class="bi bi-whatsapp"></i> -->
+				</p> 
+				<img  src="./img/whatsap.png">
+			</a>
+			<a class="tel" href="tel:+5491150206254" target="_blank">
+				<p>Puedes llamar y con gusto atenderemos</p>
+				<img  src="./img/llamada.png" >
+			</a>
+			<a  class="cv" href="./download/xx.pdf" download="catálogo" target="_blank"> 
+				<!-- ./download/# -->
+				<p>Puedes descargar el catálogo</p>
+				<img src="./img/cv.png">
+			</a>
+		</div>
+
+
+
+	<img id='flechas' class="flechas" src="./img/flechitas_teclado.png" >
+	<!-- botones para pasar pagina -->		
+	<div class="container">
+		<div class="magazine">
+			<!-- Next button -->
+			<div ignore="1" class="next-button"></div>
+			<!-- Previous button -->
+			<div ignore="1" class="previous-button"></div>
+		</div>
+	</div>
+</div>
+
+
+
+	<!-- responsive flechas -->
+	<div class="flechas_responsive">
+		<img class="next-button-responsive" src="./img/flecha_derecha_responsive.png" alt="">
+		
+		<img class="previous-button-responsive" src="./img/flecha_izquierda_responsive.png" alt="">
+	</div>
+
+	<!-- copyright -->
+	<div style="display: flex; flex-direction: column;">
+		
+		<p id="copy" style=" z-index: 9; position: absolute; bottom: 0; color: white; left: 50%; transform: translateX(-50%);font-family:sans-serif; font-size: 0.9rem; text-shadow: 1px 2px  black; "> Copyright ©2025 Universal Growing All rights reserved.</p>
+	</div>
+</div>
+
+
+<div class="loading-page" >
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="425" height="421" viewBox="0 0 425 421">
+  <defs>
+    <style>
+      <!-- #svg{
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 122px;
+
+        fill-rule: evenodd;
+
+      } -->
+    </style>
+  </defs>
+  <path id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1" d="M192,18c74.26-.924,128.768,23.539,160,65,15.492,20.566,33.3,40.42,40,70H348c-3.285-15.075-14.044-26.305-22-37-26.594-35.749-92.211-73.777-159-52-41.1,13.4-70.273,38.22-91,72-12.462,20.31-18.011,45.545-18,78a112.8,112.8,0,0,0,6,37c1.078,3.21,2.637,10.208,2,11L52,290c-2.738,6.472-2.855,14.868-7,20v-1H44c-8.929-18.851-17.969-37.06-24-60-6.723-25.573-3.64-66.084,3-88C41.448,100.116,77,56.816,132,33c12.114-5.245,25.606-8.476,39-12C177.289,19.345,186.877,21.2,192,18ZM400,189c0.36,20.994,1.974,42.363-3,61-20,74.922-66.179,121.942-138,145-56.531,18.149-119.017-2.773-154-25-8.049-5.114-29.23-16.249-30-27,4.693-7.41,4.475-23.324,8-32,8.068-19.858,18.1-38.783,30-55,23.206-31.622,60.544-52.581,104-64,18.812-4.943,43.357-3,66-3H400Zm-42,41H275c-16.441,0-34.071-1.517-48,2-52.641,13.293-93.958,46.618-106,100,16.7,9.921,33.485,19.1,55,25,23.76,6.52,56.511,2.43,76-4,46.17-15.234,76.8-41.959,95-85C351.642,257.02,356.965,244.754,358,230Z"/>
+</svg>
+
+	
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<svg class="svg logo-name" xmlns="http://www.w3.org/2000/svg" width="2361" height="954" viewBox="0 0 2361 954">
+  <defs>
+    <style>
+      .svg {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 15px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Rectángulo_1" data-name="Rectángulo 1" class="cls-1" d="M761,1c17.673,2.976,29.352,6.5,37,19,17.358,28.367-4.616,56.364-28,62-33.19,8-57.908-28.975-45-58,3.641-8.186,12.536-16.564,21-20C750.142,2.318,757.125,3.287,761,1ZM274,20h76c1.88,5.721,1,15.629,1,23V255c-2.123,3.54.153,10.079-1,15-1.868,7.97-2.5,17.729-5,26-8.067,26.708-21.739,52.384-42,67-18.105,13.061-39.527,19.959-65,26-20.507,4.863-55.955,2.544-74-2-11.437-2.88-19.968-3.229-30-7-31.941-12.006-55.022-37.854-68-69-12.282-29.477-11-70.526-11-112V21c5.709-1.894,15.637-1,23-1h50a4.558,4.558,0,0,1,4,1c2.177,3.522,1,12.692,1,18V251q2,12,4,24c4.246,11.744,11.613,25.248,21,32,29.453,21.186,84.138,13.656,102-12,15.2-21.839,14-58.822,14-96V20Zm1916,0h73c2.14,6.509,1,17.786,1,26V300c5.02,7.428,4.94,15.486,17,16,5.37,3.292,16.02-.862,23,1,2.26,0.6,5.1,2.336,8,3,1.85,2.788,5.54,5.12,7,8,5.09,10.062,2.06,41.464,2,56-10.72,5.551-36.4,2.12-51,2-6.48-3.9-21.55-2.947-29-6-18.57-7.607-32.32-20.486-42-37-12.73-21.709-9-62.319-9-96V94C2190,70.64,2187.66,36.732,2190,20Zm-935,85c85.74-.689,127.28,33.08,148,97,5.71,17.6,11.49,47.1,6,69-11.73,7.287-39.74,4-58,4H1210a15.649,15.649,0,0,0-1,5c5.46,6.286,7.14,16.318,12,23,14.19,19.521,54.21,31.571,81,15,11.48-7.1,17.82-26.328,33-27l63,23c-7.18,31.4-40.94,56.627-69,68-10.86,4.4-21.18,4.128-34,7-13.3,2.979-40.24,3.713-54,0-26.26-7.083-46.32-15.972-65-30-31.71-23.811-58.08-93.758-41-153,6.79-23.532,18.63-46.631,34-62a136.564,136.564,0,0,1,52-32C1229.33,109.271,1248.34,109.266,1255,105Zm477,0c35.27-1.008,65.15,8.033,87,21,7.2,4.273,20.24,6.6,21,17-4.88,4.011-6.53,10.477-10,16-6.83,10.853-14.36,21.914-23,31-15.03-.126-22.19-8.378-33-13-10.24-4.377-19.42-4.2-32-7-5.92-1.32-17.84-2.147-24,0-6.48,2.259-9.58,7.721-14,12v10c2.9,2.89,4.58,7.7,8,10,4.11,2.765,8.74,2.234,14,4,10.89,3.66,24.54,7.75,36,11,7.29,2.067,12.97,1.474,20,4,27.51,9.889,48.2,23.194,61,48,4.71,9.128,12.61,25.652,9,42-1.98,8.977-2.65,18.257-6,26-22.83,52.718-104.13,65.124-170,43-14-4.7-43.62-14.526-48-27,13.99-10.331,21.38-47.09,42-48,10.67,9.944,56.95,26.457,80,21,5.35-1.268,9.35.053,14-2,7.34-3.238,21.3-16.308,13-28-4.2-12.23-16.12-12.117-29-16-28.72-8.661-62.14-11.633-84-27-21.18-14.884-40.11-52.773-27-89a85.9,85.9,0,0,1,35-43c11.02-6.8,25.96-10.692,40-14C1718.47,105.474,1727.01,108.043,1732,105Zm253,0c61.05-.52,102.55,11.49,125,49,8.74,14.6,9.75,32.4,14,52v95c2.57,9.262,12.14,12.015,15,20,4.14,11.565,1.01,47.784,1,63l-3,1c-2.1.991-15.22-.112-19-1-19.51-4.576-30.87-7.208-44-17-5.02-3.744-5.02-9.862-13-11-13.13,19.883-75.2,42.875-115,33-36.3-9.006-55.49-22.917-66-58-2.25-7.518-5.65-23.526-3-35,10.47-45.337,36.99-63.4,81-75l20-2c15.73-3.655,33.86-5.681,48-10,8.04-2.455,19.96-2.766,23-10,0.75-1.073.6-.946,1-3-5.63-7.9-6.69-14.85-15-20-18.25-11.315-55.1-6.951-73,2-9.81,4.9-18.15,13.151-30,16-4.86,1.168-11.61-.5-15-2-6.25-2.777-28.04-32.012-29-40,5.25-3.588,8.89-10.2,14-14,9.7-7.223,21.67-15.068,33-20,9.64-4.194,20.73-7.158,31-10C1971.97,106.347,1980.32,108.063,1985,105ZM416,111h42c5.063,0,13.694-1.088,17,1,3.851,1.3,4.483,3.579,7,6v21c2.076-.372,1.924-0.242,3-1,14.8-14,28.665-25.062,52-31,8.806-2.241,23.7-1.863,32,0,9.738,2.184,16.39.381,25,3,21.355,6.5,42.693,20.414,53,38,20.2,34.462,17,84.063,17,139v68c0,7.435,1.766,23.173,0,27-2.232,4.777-11.376,3-18,3H592c-1.021-.8-0.274-0.355-2-1V216c-2.644-4.443-1.268-11.8-3-17a49.956,49.956,0,0,0-14-21c-15.3-13.24-47.281-7.5-61,2-21.589,14.948-22,42.022-22,79v86c0,12.568.932,29.665,0,39-21.365,4.082-49.73,1.042-73,1a10.925,10.925,0,0,0-2-3c2.052-6.246,1-17.067,1-25V111Zm310,0h72q0.5,1.5,1,3c1.219,3.011,0,16.5,0,23V323c0,19.663,1.323,44.666,0,61-5.709,1.894-15.637,1-23,1H726c-1.889-5.714-1-15.634-1-23V173C725,157.317,721.942,123.3,726,111Zm395,0c0.02,8.136-3.65,12.5-6,18-6.39,15-11.43,30.73-17,45-18.47,47.316-32.71,95.6-53,141-1.97,4.4-1.21,7.659-3,12-5.15,12.471-10.88,26.654-16,39-2.41,5.809-2.35,15.532-8,18-4,2.529-15.08,1-21,1-18.526,0-41.3,2.331-58-1-1.789-9.062-6.711-18.126-10-26-7.351-17.6-13.361-36.069-20-53-17.743-45.246-30.58-90.195-49-135-4.64-11.286-8.368-22.8-13-35-2.675-7.047-7.665-14.706-9-23,6.234-2.065,17.076-1,25-1h56c12.673,29.8,20.424,61.376,33,92,10.1,24.59,19.882,50.079,25,77h3c7.093-13.892,9.783-29.87,16-45,10.31-25.094,19.37-52.547,29-78,4.4-11.62,7.91-23.033,12-34,1.52-4.078,1.35-10.3,5-12h79Zm335,0c19.99-.088,42.67-1.144,61,1,2.23,3.335,3.69,3.195,4,9,3.37,5.137.39,18.19,0,24a2.909,2.909,0,0,1,1,1h2c15.08-22.457,51.88-34.822,90-35,4,11.97,1.09,32.952,1,47-0.65.86-1.34,3.144-2,4-1.73,5.578-5.46,6.469-9,10-30.88,1.913-51.63,7.046-64,27-10.53,16.986-10,42.136-10,70V384c-5.71,1.894-15.64,1-23,1h-50c-5.37-10.539-2-61.1-2-78V113C1455.8,111.979,1455.35,112.726,1456,111Zm-196,59c-4.67,3.179-11.71,2.329-17,5-13.11,6.618-29.52,22.178-32,39,9.68,3.194,26.41,1,38,1h80c1.02-.8.27-0.355,2-1v-2q-3.495-7-7-14C1310.55,178.689,1293.64,169.784,1260,170Zm787,90c-18.35,21.63-68.89,9.84-92,26-5.26,3.676-11.84,18.924-6,27,5.06,18.611,41.8,17.816,61,11,25.18-8.942,40.59-28.054,40-63ZM1379,450c55.37,0.163,57.51,69.584,10,81-30.66,7.366-56.69-27.147-45-56a42.478,42.478,0,0,1,26-24C1373.21,450.008,1376.82,451.285,1379,450ZM208,463c76.183-.852,122.775,19.542,154,63,10.5,14.62,26.1,33.881,28,56l-3,1c-4.862,3.349-11.455,2.1-18,4-8.41,2.438-35.268,13.418-46,10-9.334-2.973-11.2-12.369-16-20-5.8-9.216-15.155-19.788-24-26-9.253-6.5-21.966-11.737-34-15-7.334-1.989-20.3-2.2-26-1-10.07,2.116-18.448.177-27,3-27.138,8.959-49.328,27.726-60,53-26.871,63.637-3.686,143.229,44,167,8.722,4.348,19.909,6.657,30,9,11.522,2.676,32.145.368,42-2,38.928-9.353,56.786-22.3,65-62-9.764-5.03-56.256-2.1-72-2-6.6-4.9-14.012-5.368-15-16-2.723-4.162-.811-47.877,0-49,5.752-3.564,36.592-1,46-1H398c2.257,6.681,1.08,18.581,1,27q-2.5,19.5-5,39c-6.371,25.015-12.947,48.606-25,68-17.647,28.394-45.34,50.714-80,62-63.49,20.673-137.194,1.685-176-27-30.9-22.843-49.465-59.7-61-102-2.759-10.118-.656-18.07-3-29-2.4-11.2-2.434-32.8,0-44,2.371-10.913.208-18.9,3-29,7.995-28.919,18.794-52.061,34-73,6.005-8.27,12.913-17.929,21-24,17.915-13.449,38.034-25.732,62-33C177.269,467.492,202.345,466.547,208,463Zm554,90c77.466,7.887,113.476,31.228,133,97,5.792,19.511,9.98,55.733,4,80-3.987,16.179-7.827,31.786-15,45-16.04,29.549-43.229,49.028-78,60-10.381,3.276-23.016,2.644-34,5-19.262,4.132-54.172-6.014-66-11-39.386-16.6-63.6-44.652-76-88-2.553-8.922-.883-16.252-3-26-2.847-13.108-2.1-40.639,1-53,2.713-10.81,5.652-22.952,10-33,13.809-31.916,40.445-55.758,74-68,10.5-3.831,22.543-4.493,34-7C751.177,552.867,758.283,555.28,762,553Zm1151,0c19.64,1.993,39.04,2.124,55,8,4.74,1.747,14.02,8.451,18,7,4.71-1.526,8.39-5.5,13-7,13.45-4.379,35.51-.966,51-1,3.82,11.438,1.08,31.517,1,45-1.88,2.456-2.01,6.569-4,9-3.98,4.86-13.26,3.818-20,6,1.5,6.538,3.46,13.933,5,21,3.74,17.174-2.01,37.3-6,48-23,61.722-73.54,61.5-151,67-1.83,2.368-4.27,3.442-6,6-2.88,3.568-1.51,7.921-1,13,3.48,2.155,6.72,5.72,11,7l24,1h72c10.48,2.283,21.97,1.09,32,4,32.41,9.408,45.23,22.375,53,57,3.28,14.611-.33,33.385-6,43-40.5,68.624-223.44,65.907-259-5-11.16-22.241-3.86-54,8-70,4.26-5.742,14.3-9.206,17-16-14.87-8.6-25.56-36.666-13-57,4.17-6.753,14.03-11.031,17-18h-1c-2.04-5.659-7.88-9.3-11-14-4.45-6.718-8.46-16.08-11-24-3.5-10.9-4.99-31.171-2-44q1.005-8,2-16c9.69-30.4,30.94-52.129,61-62,11-3.613,22.97-4.389,35-7C1902.18,552.877,1909.29,555.284,1913,553Zm-294,2c55.11-.362,87,13.011,107,47,14.54,24.705,15,60.765,15,100V832c-9.84,5.07-57.11,2.1-73,2-5.45-10.672-2-35.5-2-50V666c-1.45-2.42-.09-6.414-1-10-2.33-9.183-6.4-21.849-13-27-19.39-15.144-57.17-11.66-71,6-17.33,22.126-15,43.383-15,82V833c-5.71,1.894-15.64,1-23,1h-49c-1.02-.8-0.27-0.355-2-1V561l3-1c6.46-2.323,52.26.012,60,2,2.5,7.43,3.08,14.717,3,26h2c8.87-13.092,25.34-22.795,41-29C1606.51,556.817,1614.22,558.087,1619,555Zm-711,4c5.971,1.98,16.357,1,24,1h52v1h1c1.148,10.864,5.907,21.617,9,31,7.08,21.491,9.65,42.4,17,64,6.37,18.7,11.91,32.95,12,56a6.155,6.155,0,0,1,2,2l3-1q22.5-75.993,45-152c5.71-1.894,15.64-1,23-1h49c5.07,9.943,5.94,21.21,10,33,9.48,27.51,17.87,58.239,27,86,2.09,6.353,3.6,12.514,5,18,1.31,5.135-1.37,12.279,1,16,1.07,0.752.95,0.6,3,1,6.29-12.346,7.31-27.653,12-42,11.64-35.635,17.9-75.647,31-111,5.71-1.894,15.64-1,23-1h51a14.159,14.159,0,0,1,1,4c-5.55,6.621-4.86,17.908-8,27-5.19,15.042-8.61,31.855-14,48-15.18,45.465-26.44,94.789-42,140-6.28,18.25-8.35,36.62-15,54-5.97,1.979-16.36,1-24,1h-55c-1.02-.8-0.27-0.355-2-1v-2c-6.46-10.156-7.06-29.317-11-42-5.4-17.353-9.02-36.6-15-55-6.22-19.131-10.9-33.309-11-57a14.134,14.134,0,0,0-4-1c-0.33,1-.67,2-1,3-6.6,10.58-7.75,29.145-12,42-7.33,22.173-13.98,46.934-22,69-3.09,8.491-8.17,39.912-14,43-4.02,2.52-15.07,1-21,1H986q-0.5-1.5-1-3c-3.352-4.578-2.97-10.883-5-17-4.722-14.229-7.984-29.607-13-45-15.253-46.8-26.451-97.5-43-144-5.346-15.023-6.8-29.979-12-45C909.637,573.168,905.314,564.869,908,559Zm-457,1c19.457-.113,43.377-2.421,61,1,6.712,10.884.973,21.713,5,34h2c16-23.867,50.222-34.829,90-35,3.909,11.7,1.085,32.235,1,46-4.226,5.8-4.6,12.422-12,15l-22,1c-13.249,3.113-25.8,7.767-34,16-9.315,9.348-13.533,24.919-17,40v16c-2.082,10.935,0,31.648,0,46,0,30.1-1.419,65.2,0,92-9.924,5.11-57.963,2.1-74,2-1.889-5.714-1-15.634-1-23V622C450,606.317,446.942,572.3,451,560Zm895,0h72c2.05,6.246,1,17.067,1,25V833c-5.71,1.894-15.64,1-23,1h-49c-1.02-.8-0.27-0.355-2-1V585C1345,577.069,1343.95,566.244,1346,560Zm557,57c-2.68,1.638-6.58.747-10,2-10.66,3.911-21.38,12.107-25,23-14.74,44.363,47.55,60.343,78,43,13.31-7.582,23.94-33.36,12-51C1948.08,619.353,1928.42,616.489,1903,617ZM753,619l-17,5c-15.275,7.9-25.957,22.867-32,40-2.684,7.609-1.085,13.988-3,23-6.71,31.582,8.992,64.778,26,77,4.3,3.089,8.694,3.79,14,6,6.4,2.665,18.367,7.5,29,5,23.62-5.552,40.105-15.093,49-35,3.282-7.345,5.129-15.857,7-24,2.594-11.286,1.349-28.274-1-38C815.361,638.084,803.174,618.364,753,619ZM2153,787c55.19-1.223,59.72,68.87,14,81-31.51,8.359-58.62-26.178-48-54,3.81-9.979,13.25-19.91,23-24C2145.63,788.477,2149.94,788.953,2153,787Zm1,11c-2.13,1.329-5.33.857-8,2-8.33,3.566-15.51,12.613-18,22-4.88,18.411,16.57,40.377,34,36C2197.6,849.06,2196.13,797.072,2154,798Zm21,50h-9c-2.88-4.776-8.23-15.226-15-16-0.63,1.754-.19.971-1,2a36.239,36.239,0,0,1,0,14h-8v-2c-3-4.708-1.11-30.121-1-38,6.68-2.257,18.58-1.08,27-1,4.41,5.529,7.18,5.931,7,17-3.17,2.787-7.38,5.658-8,11,3.49,2.368,5.03,6.157,8,9v4Zm-20-33c-1.18.8-1.68,0.773-4,1-0.63,1.754-.19.971-1,2,0.63,1.754.19,0.971,1,2,1.66,4.059,6.4,3.326,12,3,1.12-2.091,1.43-1.832,2-5-0.8-1.021-.35-0.274-1-2C2159.46,815.912,2158.39,816.108,2155,815Zm-274,20c-7.9,4.583-17.69.836-21,10-2.09,2.275-2.11,5.344-2,10,3.77,3.639,7.15,8.508,12,11,18.41,9.461,63.75,11.656,88,6,18.1-4.222,37.14-2.743,37-25h-1c-3.11-9.48-10.44-8.627-21-11-8.62-1.937-21.7-1-32-1h-60Z"/>
+</svg>
+	  
+	  
+	  
+	<div class="name-container">
+		<img class="logo-name" src="./img/luxterra.png" alt="">
+		
+	</div>
+</div> 
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+<script>
+gsap.fromTo(
+	".loading-page",
+	{ opacity: 1 },
+	{
+	  opacity: 0,
+	  display: "none",
+	  duration: 2,
+	  delay: 3,
+	}
+  );
+  
+  gsap.fromTo(
+	".logo-name",
+	{
+	  y: 50,
+	  opacity: 0,
+	},
+	{
+	  y: 0,
+	  opacity: 1,
+	  duration: 2,
+	  delay: 0.5,
+	}
+  );
+  
+  gsap.fromTo(
+	".logo-parrafo",
+	{
+	  y: 50,
+	  opacity: 0,
+	},
+	{
+	  y: 0,
+	  opacity: 1,
+	  duration: 2,
+	  delay: 0.5,
+	}
+  );
+  
+</script>
+
+<script type="text/javascript">
+flechas = document.getElementById('flechas')
+function loadApp() {
+
+ 	$('#canvas').fadeIn(1000);
+
+ 	var flipbook = $('.magazine');
+
+ 	// Check if the CSS was already loaded
+	
+	if (flipbook.width()==0 || flipbook.height()==0) {
+		setTimeout(loadApp, 10);
+		return;
+	}
+	
+	// Create the flipbook
+
+	flipbook.turn({
+			
+			// Magazine width
+
+			width: 1050,
+
+			// Magazine height
+
+			height: 800,
+
+			// Duration in millisecond
+
+			duration: 1000,
+
+			// Hardware acceleration
+
+			acceleration: true,
+
+			// Enables gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true,
+
+			// Elevation from the edge of the flipbook when turning a page
+
+			elevation: 50,
+
+			// The number of pages
+
+			pages: 48,
+
+			// Events
+
+			when: {
+				turning: function(event, page, view) {
+					
+					var book = $(this),
+					currentPage = book.turn('page'),
+					pages = book.turn('pages');
+			
+					// Update the current URI
+
+					Hash.go('page/' + page).update();
+
+					// Show and hide navigation buttons
+
+					disableControls(page);
+					
+
+					$('.thumbnails .page-'+currentPage).
+						parent().
+						removeClass('current');
+
+					$('.thumbnails .page-'+page).
+						parent().
+						addClass('current');
+
+
+
+				},
+
+				turned: function(event, page, view) {
+
+					disableControls(page);
+
+					$(this).turn('center');
+
+					if (page==1) { 
+						$(this).turn('peel', 'br');
+					}
+
+				},
+
+				missing: function (event, pages) {
+
+					// Add pages that aren't in the magazine
+
+					for (var i = 0; i < pages.length; i++)
+						addPage(pages[i], $(this));
+
+				}
+			}
+
+	});
+
+	// Zoom.js
+
+	$('.magazine-viewport').zoom({
+		flipbook: $('.magazine'),
+
+		max: function() { 
+			flechas.style.display = 'none';
+			return largeMagazineWidth()/$('.magazine').width();
+
+		}, 
+
+		when: {
+
+			swipeLeft: function() {
+
+				$(this).zoom('flipbook').turn('next');
+
+			},
+
+			swipeRight: function() {
+				
+				$(this).zoom('flipbook').turn('previous');
+
+			},
+
+			resize: function(event, scale, page, pageElement) {
+
+				if (scale==1)
+					loadSmallPage(page, pageElement);
+				else
+					loadLargePage(page, pageElement);
+
+			},
+
+			// zoomIn: function () {
+
+			// 	$('.thumbnails').hide();
+			// 	$('.made').hide();
+			// 	$('.magazine').removeClass('animated').addClass('zoom-in');
+			// 	$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+				
+			// 	if (!window.escTip && !$.isTouch) {
+			// 		escTip = true;
+
+			// 		$('<div />', {'class': 'exit-message'}).
+			// 			html('<div>Press ESC to exit</div>').
+			// 				appendTo($('body')).
+			// 				delay(2000).
+			// 				animate({opacity:0}, 500, function() {
+			// 					$(this).remove();
+			// 				});
+			// 	}
+			// },
+
+			// zoomOut: function () {
+			// 	flechas.style.display = 'block';
+			// 	$('.exit-message').hide();
+			// 	$('.thumbnails').fadeIn();
+			// 	$('.made').fadeIn();
+			// 	$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+
+			// 	setTimeout(function(){
+			// 		$('.magazine').addClass('animated').removeClass('zoom-in');
+			// 		resizeViewport();
+			// 	}, 0);
+
+			// }
+		}
+	});
+
+	// Zoom event
+////////////////////////////////////////////////////////////////////////////// ZOOM DESACTIVADO
+	// if ($.isTouch)
+	// 	$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
+	// else
+	// 	$('.magazine-viewport').on('zoom.tap', zoomTo);
+////////////////////////////////////////////////////////////////////////////// ZOOM DESACTIVADO
+
+	// Using arrow keys to turn the page
+
+	$(document).on('keydown',function(e){
+
+		var previous = 37, next = 39, esc = 27;
+
+		switch (e.keyCode) {
+			case previous:
+
+				// left arrow
+				$('.magazine').turn('previous');
+				e.preventDefault();
+
+			break;
+			case next:
+
+				//right arrow
+				$('.magazine').turn('next');
+				e.preventDefault();
+
+			break;
+			case esc:
+				
+				$('.magazine-viewport').zoom('zoomOut');	
+				e.preventDefault();
+
+			break;
+		}
+	});
+
+	// URIs - Format #/page/1 
+
+	Hash.on('^page\/([0-9]*)$', {
+		yep: function(path, parts) {
+			var page = parts[1];
+
+			if (page!==undefined) {
+				if ($('.magazine').turn('is'))
+					$('.magazine').turn('page', page);
+			}
+
+		},
+		nop: function(path) {
+
+			if ($('.magazine').turn('is'))
+				$('.magazine').turn('page', 1);
+		}
+	});
+
+
+	$(window).on('resize',function() {
+		resizeViewport();
+	}).on('orientationchange', function() {
+		resizeViewport();
+	});
+
+	// Events for thumbnails
+
+	$('.thumbnails').on('click', function(event) {
+		
+		var page;
+
+		if (event.target && (page=/page-([0-9]+)/.exec($(event.target).attr('class'))) ) {
+		
+			$('.magazine').turn('page', page[1]);
+		}
+	});
+
+	$('.thumbnails li').
+		on($.mouseEvents.over, function() {
+			
+			$(this).addClass('thumb-hover');
+
+		}).on($.mouseEvents.out, function() {
+			
+			$(this).removeClass('thumb-hover');
+
+		});
+
+	if ($.isTouch) {
+		console.log('tactil')
+		// $('.thumbnails').
+		// 	addClass('thumbanils-touch').
+		// 	on($.mouseEvents.move, function(event) {
+		// 		event.preventDefault();
+		// 	});
+
+	} else {
+
+		$('.thumbnails ul').on('mouseover', function() {
+
+			$('.thumbnails').addClass('thumbnails-hover');
+
+		}).on('mousedown',function() {
+
+			return false;
+
+		}).on('mouseout',function() {
+
+			$('.thumbnails').removeClass('thumbnails-hover');
+
+		});
+
+	}
+
+
+	// Regions
+
+	if ($.isTouch) {
+		$('.magazine').on('touchstart', regionClick);
+	} else {
+		$('.magazine').on('click', regionClick);
+	}
+
+	// Events for the next button
+
+	$('.next-button').on($.mouseEvents.over, function() {
+		
+		$(this).addClass('next-button-hover');
+
+	}).on($.mouseEvents.out, function() {
+		
+		$(this).removeClass('next-button-hover');
+
+	}).on($.mouseEvents.down, function() {
+		
+		$(this).addClass('next-button-down');
+
+	}).on($.mouseEvents.up, function() {
+		
+		$(this).removeClass('next-button-down');
+
+	}).on('click', function() {
+		
+		$('.magazine').turn('next');
+
+	});
+
+	// Events for the next button
+	
+	$('.previous-button').on($.mouseEvents.over, function() {
+		
+		$(this).addClass('previous-button-hover');
+
+	}).on($.mouseEvents.out, function() {
+		
+		$(this).removeClass('previous-button-hover');
+
+	}).on($.mouseEvents.down, function() {
+		
+		$(this).addClass('previous-button-down');
+
+	}).on($.mouseEvents.up, function() {
+		
+		$(this).removeClass('previous-button-down');
+
+	}).on('click', function() {
+		
+		$('.magazine').turn('previous');
+
+	});
+
+
+	resizeViewport();
+
+	$('.magazine').addClass('animated');
+
+}
+
+// Zoom icon
+////////////////////////////////////////////////////////////////////// ICONO DESACTIVADO
+//  $('.zoom-icon').on('mouseover', function() { 
+ 	
+//  	if ($(this).hasClass('zoom-icon-in'))
+//  		$(this).addClass('zoom-icon-in-hover');
+
+//  	if ($(this).hasClass('zoom-icon-out'))
+//  		$(this).addClass('zoom-icon-out-hover');
+ 
+//  }).on('mouseout', function() { 
+ 	
+//  	 if ($(this).hasClass('zoom-icon-in'))
+//  		$(this).removeClass('zoom-icon-in-hover');
+ 	
+//  	if ($(this).hasClass('zoom-icon-out'))
+//  		$(this).removeClass('zoom-icon-out-hover');
+
+//  }).on('click', function() {
+
+//  	if ($(this).hasClass('zoom-icon-in'))
+//  		$('.magazine-viewport').zoom('zoomIn');
+//  	else if ($(this).hasClass('zoom-icon-out'))	
+// 		$('.magazine-viewport').zoom('zoomOut');
+
+//  });
+
+//  $('#canvas').hide();
+////////////////////////////////////////////////////////////////////// ICONO DESACTIVADO
+
+
+// Load turn.js
+
+loadApp()
+
+</script>
+
+</body>
+</html>
