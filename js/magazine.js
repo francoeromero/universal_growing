@@ -465,7 +465,7 @@ function addPage(page, book) {
 
 		// //////////////////////////////////////////////////////////////////////////////////
 		// Crear un elemento <div> que actuará
-		if(page == 29){
+		if(page == 15){
 			if(flag_responsivo == false){
 				webp = cargarWebp_1(lista_gifs[0]);
 				element.append(webp);
