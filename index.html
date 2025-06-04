@@ -1,83 +1,169 @@
 <!doctype html>
-<html lang="en">
-
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-<title>UNIVERSAL GROWING</title>
+<title>LUX TERRA</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
 
+
+<script type="text/javascript" src="./extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="./extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="./lib/hash.js"></script>
 <!-- font -->
+
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-<!-- font -->
-<!-- turnjs -->
-<script type="text/javascript" src="./extras/jquery.min.js"></script>
-<script type="text/javascript" src="./lib/hash.js"></script>
-<script type="text/javascript" src="./lib/turn.min.js"></script>
-<script type="text/javascript" src="./lib/zoom.min.js"></script>
-<script type="text/javascript" src="js/magazine.js"></script>
-<!-- turnjs -->
 <!-- icon bootstrap -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<!-- icon bootstrap -->
 <link rel="icon" href="./img/icon_pestaña_nav.png">
 <link rel="stylesheet" href="./css/magazine.css">
-
 </head>
-
 <body>
+	<div id="canvas">
+		
+		<div class="zoom-icon zoom-icon-in"></div>
+		
+<div class="magazine-viewport" >
+	<div class="menu" style="display: none;" >
+
+		
+		<i id="flechaMenu" class="bi bi-chevron-compact-right"></i>
+
+
+		<ul style="color: white;">
+			<li>
+				<div class="circuloColor"></div>
+			</li>
+			<li >
+				<img class="logoMenu" src="./img/icono.png" width="100" alt="">
+			</li>
+
+			<li><p class="myname">LUX TERRA</p></li>
+			<li><p class="title">PROPIEDADES</p></li>
+			<div class="redes">
+				<a href="https://www.facebook.com/sustentar.arg" target="_blank">
+					<img src="./img/facebook.png" alt="">
+				</a>
+				<a href="https://www.instagram.com/sustentar_arg/" target="_blank">
+					<img src="./img/instagram.png" alt="">
+				</a>
+				<a href="https://www.sustentarnqn.com.ar/" target="_blank"> 
+					<img src="./img/web.png" alt="">
+				</a>
+			</div>
+			<!-- <li><p class="description">Profesional independiente, especializado en Diseño, Tecnología y Programación</p></li> -->
+			<!-- <li>
+				<p class="hab">Revit</p>
+				<p class="hab">AutoCAD</p>
+				<p class="hab">Revit MEP</p>
+				<p class="hab">Adobe Photoshop</p>
+				<p class="hab">Sketchup</p>
+				<p class="hab">Blender</p>
+				<p class="hab">3Ds Max</p>
+				<p class="hab">Lumion</p>
+				<p class="hab">Twinmotion</p>
+				<p class="hab">Adobe Premier</p>
+				<p class="hab">Adobe After effects</p>
+				<p class="hab">Vray</p>
+				<p class="hab">Excel</p>
+				<p class="hab">Google Sheets</p>
+				<p class="hab">Desarrollo Web</p>
+				<p class="hab">Diseño Web</p>
+				<p class="hab">APIs</p>
+				<p class="hab">Fotografía</p>
+				<p class="hab">HTML5</p>
+				<p class="hab">CSS</p>
+				<p class="hab">JavaScript</p>
+				<p class="hab">Python</p>
+				<p class="hab">Nodejs</p>
+				<p class="hab">SASS</p>
+				<p class="hab">Bootstrap</p>
+				<p class="hab">Git</p>
+				<p class="hab">Inteligencia Artificial</p>
+				<p class="hab">Figma</p>
+				<p class="hab">Vue JS</p>
+				<p class="hab">Next JS</p>
+				<p class="hab">React JS</p>
+				<p class="hab">PHP</p>
+				<p class="hab">SQL</p>
+				<p class="hab">MySQL</p>
+				
+			</li> -->
+		</ul>
+
+		<ul class="contactoMenu">
+
+			<li><a href="mailto:nazca1958.sa@gmail.com" style="font-size: 0.8rem;" target="_blank">
+				<!-- <i class="bi bi-envelope" style="color: white; margin-right: 1rem;"></i>  -->
+				nazca1958.sa@gmail.com</a>
+			</li>
+
+			<li><a href="https://wa.me/5491151487328" target="_blank">
+				<!-- <i class="bi bi-telephone" style="color: white; margin-right: 1.3rem;"></i> -->
+				 +54 9 11-1111-1111</a>
+			</li>
+	
+			<li> <a href="https://www.luxterrapropiedades.com
+				" target="_blank">
+				<!-- <i class="bi bi-geo-alt" style="color: white; margin-right: 1rem;"></i> -->
+				www.luxterrapropiedades.com
+</a>
+			</li>
+			<!-- <li> <a href="#">www.jpstudio.com</a></li> -->
+		</ul>
+	</div>
+	<!-- contacto -->
+	<div class="contacto" >
+		<a class="wp" href="https://wa.me/5491150206254" style="display: flex;" target="_blank">
+			<p>Contáctanos por Whatsapp 
+				<!-- <i class="bi bi-whatsapp"></i> -->
+			</p> 
+			<img  src="./img/whatsap.png">
+		</a>
+		<a class="tel" href="tel:+5491150206254" target="_blank">
+			<p>Puedes llamar y con gusto atenderemos</p>
+			<img  src="./img/llamada.png" >
+		</a>
+		<a  class="cv" href="./download/xx.pdf" download="catálogo" target="_blank"> 
+			<!-- ./download/# -->
+			<p>Puedes descargar el catálogo</p>
+			<img src="./img/cv.png">
+		</a>
+	</div>
+
+	<!-- fondo video -->
+	<video muted autoplay loop>
+		<source src="./video/background42.mp4" type="video/mp4">
+	</video>
 
 
 
+	<!-- <div class="capa"></div>
+	<div class="responsive-icons">
+		<a class="r-icon" href="./download/sustentar.pdf" download="catálogo" target="_blank"><img src="./img/imprimir.png" alt=""></a>
+		<a class="r-icon"  href="https://wa.me/5492996355396" target="_blank"><img src="./img/whatsap.png" alt=""></a>
+		<a class="r-icon" href="mailto:sustentarnqn@gmail.com" target="_blank"><img src="./img/email.png" alt=""></a>
 
+	</div> -->
 
-
-
-
-<div id="canvas" class="canvas">
-
-
-<div class="zoom-icon zoom-icon-in"></div>
-
-<div class="magazine-viewport">
-		<!-- contacto -->
-		<div class="contacto" >
-			<a class="wp" href="https://wa.me/5491150206254" style="display: flex;" target="_blank">
-				<p>Contáctanos por Whatsapp 
-					<!-- <i class="bi bi-whatsapp"></i> -->
-				</p> 
-				<img  src="./img/whatsap.png">
-			</a>
-			<a class="tel" href="tel:+5491150206254" target="_blank">
-				<p>Puedes llamar y con gusto atenderemos</p>
-				<img  src="./img/llamada.png" >
-			</a>
-			<a  class="cv" href="./download/xx.pdf" download="catálogo" target="_blank"> 
-				<!-- ./download/# -->
-				<p>Puedes descargar el catálogo</p>
-				<img src="./img/cv.png">
-			</a>
-		</div>
-
-
-
+	
 	<img id='flechas' class="flechas" src="./img/flechitas_teclado.png" >
-	<!-- botones para pasar pagina -->		
+	<!-- botones para pasar pagina -->
 	<div class="container">
 		<div class="magazine">
 			<!-- Next button -->
-			<div ignore="1" class="next-button"></div>
-			<!-- Previous button -->
+			<div ignore="1" class="next-button"></div>			<!-- Previous button -->
 			<div ignore="1" class="previous-button"></div>
 		</div>
 	</div>
-</div>
-
 
 
 	<!-- responsive flechas -->
@@ -90,112 +176,33 @@
 	<!-- copyright -->
 	<div style="display: flex; flex-direction: column;">
 		
-		<p id="copy" style=" z-index: 9; position: absolute; bottom: 0; color: white; left: 50%; transform: translateX(-50%);font-family:sans-serif; font-size: 0.9rem; text-shadow: 1px 2px  black; "> Copyright ©2025 Universal Growing All rights reserved.</p>
+		<p id="copy" style=" z-index: 9; position: absolute; bottom: 0; color: white; left: 50%; transform: translateX(-50%);font-family:sans-serif; font-size: 0.7rem; text-shadow: 1px 2px  black; "> Copyright © 2024 - RC</p>
 	</div>
 </div>
 
 
-<div class="loading-page" >
-
-<!-- <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
-  <defs>
-
-  </defs>
-  <path id="Rectángulo_redondeado_1" data-name="Rectángulo redondeado 1" d="M551,93V342h1c3.4-5.139,8.716-8.716,13-13l30-30,91-91,33-33c4.367-4.366,7.946-11.521,15-13,4.079,5.891,11.244,8.727,17,13,11.5,8.536,21.9,19.905,32,30,4.237,4.237,10.816,7.887,13,14-13.934,9.211-25.238,25.238-37,37l-78,78-31,31c-4.245,4.245-10.8,7.884-13,14H885c0.879,7.765,3.967,16.062,6,23,4.769,16.273,6.689,42.9,7,62H681c-46.686,0-83.487-3.343-110,17-25.224,19.354-20.219,70.333-20,115H465c0.344-47.962,4.306-96.776-23-117-24.965-18.49-63.708-15-107-15H115c-0.5-31.924,9.316-58.179,13-85H384v-1c-13.014-8.6-27.591-27.591-39-39l-82-82-30-30c-4.152-4.152-10.582-7.234-12-14,7.511-4.942,11.977-13.689,19-19,12.27-9.279,23.178-19,36-28,3.385-2.376,5.4-5.477,10-7,7.043,10.634,19.038,19.038,28,28l60,60,62,62c9.277,9.277,18,21.706,29,29V93h1V92C493.584,91.48,524.472,89.894,551,93ZM212,532c9.048,93.377,74.235,177.817,139,216v-3c-7.14-8.033-8.582-21.3-13-32-14.426-34.927-25.618-78.5-30-122-1.391-13.813-7.853-48.2-4-60,23.59,7.873,67.914-8.941,81,9,10.14,13.9,6.841,49.634,12,69,11.242,42.2,19.894,82.179,38,117,7.021,13.5,17.242,25.358,26,37,8.047,10.7,30.778,34.115,53,29,61-14.04,85.982-102.467,103-163l10-59c3.238-14.459-.129-27.1,10-34,11.83-8.058,58.005-4.206,78-4,0.638,24.459-1.575,46.693-7,68-2.813,11.047-1.151,20.443-4,31-5.662,20.98-9.152,42.7-16,63-4.984,14.776-13.326,29.849-17,45h1c5.082-7.31,15.859-12.624,23-18,4.824-3.632,9.07-9.342,13-14,2.628-3.114,7.422-4.851,10-8,8.619-10.529,18.225-20.952,26-32,17.466-24.817,31.55-54.693,42-86q5.5-25,11-50c12.646,4.108,46.976,1,63,1,5.577,0,18.991-1.191,21,0,0.8,1.18.773,1.681,1,4-5.421,8.965-3.605,30.827-7,42-7.064,23.248-12.828,46.7-22,68-48.084,111.667-138.389,187.4-264,222-54.828,15.1-138.589,11.538-187-6l-14-3c-19.931-7.389-39.753-14.4-58-24-68.5-36.043-114.976-87.214-155-152-19.489-31.547-29.949-65.886-41-107-3.009-11.193-10.217-32.09-6-45,6.235,2.065,17.076,1,25,1h59Z"/> 
-</svg> -->
-
-
-
-
-
-
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-
+ <div class="loading-page">
 <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="1592" height="634" viewBox="0 0 1592 634">
   <defs>
 
   </defs>
   <path id="Rectángulo_redondeado_1" data-name="Rectángulo redondeado 1" class="cls-1" d="M590,286H436c-25.067,0-53.423-2.508-68,8-20.53,14.8-18.214,47.211-18,83H291c0.253-33.026,2.8-67.076-16-81-16.159-11.971-44.331-10-73-10H49c-0.435-23,4.8-41.571,9-60H234v-1c-9.9-6.534-17.669-17.669-26-26l-55-55c-6.813-6.813-28.1-23.935-31-32,9.174-5.965,15.264-16.466,24-23,6.327-4.732,15.224-8.78,20-15h1v1L291,198V28c19.213-.139,41.236-2.457,59,1V201h1c7.5-11.37,20.425-20.425,30-30l62-62c7.043-7.043,24.662-30.049,34-32,5.277,6.781,15.089,11.792,22,17,7.771,5.856,12.742,15.512,21,21v1h-1L410,226H581v2C587.888,237.931,589.934,269.334,590,286Zm175-79H727V177c5.971-1.98,16.357-1,24-1h52c2.43,7.205,1.081,20.021,1,29-3.491,5.8-2.413,14.92-5,21-8.6,20.211-26.86,36.312-48,44-9.337,3.4-25.356,5.4-36,3-7.526-1.7-13.482.115-20-2-27.864-9.04-44.835-25.96-55-53-3.543-9.425-8.6-28.916-5-44,9.811-41.111,28.984-63.295,70-73h13c30.162-6.239,55.9,12.7,69,28,3.091,3.611,15.648,22.447,13,27-5.34,3.382-36.045,1.111-45,1-7.9-13.835-30.974-23.911-52-15-16.564,7.02-31.756,31.676-25,58,4.117,16.04,12.76,28.174,27,34C731.108,244.681,761.89,229.208,765,207Zm235-107c49.69-.7,73.48,16.871,90,49,5.52,10.741,12.41,32.81,8,52-1.66,7.219-3.14,15.412-6,22-12.07,27.795-35.12,43.645-68,51-15.07,3.371-33.507-1.4-43-5-32.725-12.417-57-37.113-57-82,0-12.92,1.043-23.542,5-33,8.844-21.137,25.909-39.155,47-48C982.96,103.081,993.59,104.061,1000,100Zm-177,2h41c3.717,11.274,1,30.711,1,44v94h54v33H823V102Zm295,0c37.62-.6,92.25-5.9,115,10,28.16,19.678,18.57,61.1-10,73v1c28.82,3.493,41.82,52.617,19,72-24.18,20.537-79.34,15.4-124,15V102Zm202,0h49q30.495,84.992,61,170h-44c-2.88-6.984-11.41-39.387-16-42-8.35-7.9-46.63-6.094-53,2-5.27,7.164-7.86,20.547-11,29l-3,11h-44v-2c3.42-4.658,3.77-11.13,6-17,4.73-12.465,8.61-25.861,14-39,9.11-22.179,15.56-46.019,25-69C1309.51,131.583,1316.3,116.651,1320,102Zm124,0h42V240h54v33h-96V102Zm-285,34v35c15.34,0.456,40.94,3.1,45-8,6-5.954,2.69-20.536-4-23C1193.09,133.46,1172.06,135.837,1159,136Zm-155,2c-4.492,2.854-11.552,2.256-16,5-9.32,5.749-16.58,16.385-20,28-10.115,34.356,15.96,73.418,51,65,26.25-6.307,47-35.78,34-70C1045.86,147.194,1030.94,137.5,1004,138Zm355,56c-0.65-6.274-11.96-40.287-15-44v1c-7.13,9.594-10.09,31.169-15,43h7C1340.98,190.728,1353.35,193.619,1359,194Zm-200,8v37c19.95,0.571,49.34,4.049,51-14,3.36-4.9-.85-12.094-2-16C1193.98,200.057,1181.62,201.88,1159,202ZM801,369H755c-8.111-17.654-36.532-30.035-58-16-15.9,10.4-26.276,41.747-16,66,7.147,16.867,34.654,35.389,59,21a47.584,47.584,0,0,0,13-12c0.97-1.391.565-4.213,2-5h46c-5.036,42.5-65.888,74.805-115,54-28.909-12.247-43.03-34.328-51-68-2.309-9.755.2-25.018,2-32,9.22-35.826,26.317-56.17,61-66C746.964,297.122,796.331,331.776,801,369Zm296-58h41V481h-42c-1.78-8.175-6.58-14.5-10-21a550.276,550.276,0,0,0-41-67c-4.89-6.8-11.94-12.387-16-20h-1V481H986V311c9.146-.1,37.65-2.056,42,0,6.85,4.628,12.03,12.418,17,19,10.62,14.059,24.58,26.511,35,41,5.31,7.388,9.62,18.78,17,24V311Zm178,0h42V481h-42c-11.18-28.507-27.36-54.325-44-78-6.97-9.923-16.33-18.757-23-29h-1v2c-3.39,5.448-1,21.331-1,29v76h-41V311c13.53,0.109,30.17,1.319,42-1,3.26,9.267,15.33,15.49,21,23,10.71,14.183,21.53,27.4,32,42,4.48,6.247,11.36,12.094,14,20h1V311ZM971,481H927v-1h-1l-13-41c-7.15-7.353-46.071-5.682-54,0-5.685,4.074-10.3,38.667-15,42H800v-2c7.715-10.329,8.84-26.447,14-39,10.864-26.429,20.16-55.562,31-82,4.983-12.154,8.334-24.647,13-36l3-11h49c3.833,17.106,12.465,35.254,19,51,10.742,25.881,16.345,52.081,27,78C961.1,452.4,968.761,466.95,971,481Zm468-170c0.84,7.956,5.31,15.534,8,22,4.65,11.18,7.68,22.6,12,33,15.78,38.03,25.44,77.413,41,115h-45c-1.46-7.489-10.58-38.279-15-42-10.01-8.15-43.79-6.608-53,1-4.08,5.286-12.81,32.857-14,41h-44c1.6-14.839,11.65-33.966,17-47,11.34-27.607,19.01-56.209,30-83,3.9-9.512,6.66-19.077,10-28,1.16-3.1,1.44-10.541,4-12h49ZM57,332h59c2.856,62.827,53.908,125.372,96,150v-2c-7.922-8.83-9.882-24.616-14-37-10.595-31.865-18.645-69.445-19-111,19.7-.44,52.9-4.771,58,10,5.857,8.211,3.9,34.438,7,46,11.265,42.068,21.558,82.36,48,109,9.467,9.538,28.128,22,46,11,31.55-19.421,45.854-64.263,57-104q4-22.5,8-45c2.417-10.546-.425-18.994,7-24,10.091-6.8,38.51-3.157,54-3,0.158,31.006-5.466,63.02-13,88-2.781,9.222-2.727,17.15-6,26-3.351,9.06-9.272,18.887-11,29h1c8.081-10.631,22.851-16.234,31-27,6.408-8.465,14.173-16.252,20-25,17.241-25.885,26.542-54.707,34-91h59c-0.01,33.271-13.513,62.261-24,86-31.415,71.111-88.73,118.676-166,144-30.689,10.058-91.427,13.761-126,4-86.114-24.313-141.372-68.542-179-141C71.016,400,57.445,368.356,57,332Zm814,71c9.567-.17,19.618-0.411,29,0-0.685-6.559-11.835-41.128-15-45C883.163,374.089,873.505,386.991,871,403Zm542-44q-7.005,22-14,44h7c4.98-3.272,17.35-.381,23,0v-2C1422.03,391.469,1421.13,365.929,1413,359ZM773,517c20.486-.574,32.246,4.343,38,18,8.9,21.128-1.8,46.373-18,52-28.369,9.851-50.962-19.2-43-46C754.939,524.375,761.5,525.579,773,517Zm-109,1h43v6H670v24h33v6H671c-2.777,8.258-1.082,22.9-1,33h-6V518Zm198,0c17.02-.466,44.608-3.52,49,9,5.457,5.656,1.777,14.818,0,21-3.078,1.943-4.811,3.871-9,5v1c12.207,1.872,11.713,20.941,13,33h-7v-2c-4.794-7.756.5-21.882-8-26-5.4-4.8-21.094-3.161-31-3v30a21.509,21.509,0,0,1-7,1V518Zm101,0h7c-0.183,11.767-2.7,47.4,2,54,1.585,5.075,4.8,5.793,8,9,38.45,3.338,29.69-27.008,29-63h7c0.73,32.655,6.65,61.626-20,69-2.579.714-9.895,2.135-14,1-3.093-.855-6.5-3.041-10-4-1.858-2.8-5.525-5.117-7-8C959.771,565.781,962.936,532.842,963,518Zm103,0h11c2.49,19.453,16.14,38.624,21,58h1v-1c5.37-6.379,13.33-31.152,17-40,1.68-4.041,2.54-15.047,6-17h10v69h-7V546c0-4.848.98-12.869-1-16-1.48,13.049-12.02,31.308-17,43-2.93,6.869-1.01,13.812-11,14-7.89-17.871-16.74-37.769-22-57h-1v57h-6C1062.58,573.7,1065.93,535.007,1066,518Zm-291,5c-8.329,6.229-14.631,8.66-18,20-5.566,18.732,8.635,45.047,30,39C815.567,573.915,815.523,521.724,775,523Zm94,1v26c13.225,0.426,32.563,2.853,36-7,3.376-4.11,1.208-9.367,0-14C896.556,523.66,883.741,523.871,869,524Z"/>
 </svg>
-
-
-
-
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- <svg class="svg logo-name" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2361 954">
-
-  <path data-name="Rectángulo 1" class="cls-1" d="M167,400H129V370c5.971-1.98,16.357-1,24-1h52c2.43,7.2,1.081,20.021,1,29-3.491,5.8-2.413,14.92-5,21-8.6,20.211-26.86,36.312-48,44-9.337,3.4-25.356,5.4-36,3-7.526-1.7-13.482.115-20-2-27.864-9.04-44.835-25.96-55-53-3.543-9.425-8.6-28.916-5-44,9.811-41.111,28.984-63.3,70-73h13c30.162-6.239,55.9,12.7,69,28,3.091,3.611,15.648,22.447,13,27-5.34,3.382-36.045,1.111-45,1-7.9-13.835-30.974-23.911-52-15-16.564,7.02-31.757,31.676-25,58,4.117,16.04,12.76,28.174,27,34C133.108,437.681,163.89,422.208,167,400ZM402,293c49.693-.7,73.484,16.871,90,49,5.522,10.741,12.408,32.81,8,52-1.658,7.219-3.14,15.412-6,22-12.069,27.8-35.122,43.645-68,51-15.069,3.371-33.507-1.4-43-5-32.725-12.417-57-37.113-57-82,0-12.92,1.043-23.542,5-33,8.844-21.137,25.909-39.155,47-48C384.96,296.081,395.59,297.061,402,293Zm-177,2h41c3.717,11.274,1,30.711,1,44v94h54v33H225V295Zm295,0c37.622-.6,92.25-5.9,115,10,28.161,19.678,18.573,61.1-10,73v1c28.824,3.493,41.821,52.617,19,72-24.178,20.537-79.34,15.4-124,15V295Zm202,0h49l61,170H788c-2.884-6.984-11.408-39.387-16-42-8.348-7.9-46.634-6.094-53,2-5.271,7.164-7.856,20.547-11,29l-3,11H661v-2c3.415-4.658,3.773-11.13,6-17,4.729-12.465,8.605-25.861,14-39,9.106-22.179,15.563-46.019,25-69C711.509,324.583,718.3,309.651,722,295Zm124,0h42V433h54v33H846V295ZM561,329v35c15.337,0.456,40.937,3.1,45-8,6-5.954,2.694-20.536-4-23C595.086,326.46,574.064,328.837,561,329Zm-155,2c-4.492,2.854-11.552,2.256-16,5-9.32,5.749-16.58,16.385-20,28-10.115,34.356,15.96,73.418,51,65,26.25-6.307,47-35.78,34-70C447.857,340.194,432.94,330.5,406,331Zm355,56c-0.655-6.274-11.964-40.287-15-44v1c-7.126,9.594-10.087,31.169-15,43h7C742.981,383.728,755.349,386.619,761,387Zm-200,8v37c19.954,0.571,49.339,4.049,51-14,3.356-4.9-.852-12.094-2-16C595.977,393.057,583.623,394.88,561,395ZM203,562H157c-8.111-17.654-36.532-30.035-58-16-15.905,10.4-26.276,41.747-16,66,7.147,16.867,34.654,35.389,59,21a47.584,47.584,0,0,0,13-12c0.97-1.391.565-4.213,2-5h46c-5.036,42.5-65.888,74.8-115,54-28.909-12.247-43.03-34.328-51-68-2.309-9.755.2-25.018,2-32,9.22-35.826,26.317-56.17,61-66C148.964,490.122,198.331,524.776,203,562Zm296-58h41V674H498c-1.778-8.175-6.584-14.5-10-21a550.276,550.276,0,0,0-41-67c-4.888-6.8-11.938-12.387-16-20h-1V674H388V504c9.146-.1,37.654-2.056,42,0,6.85,4.628,12.029,12.418,17,19,10.619,14.059,24.583,26.511,35,41,5.311,7.388,9.621,18.78,17,24V504Zm178,0h42V674H677c-11.183-28.507-27.36-54.325-44-78-6.974-9.923-16.334-18.757-23-29h-1v2c-3.394,5.448-1,21.331-1,29v76H567V504c7.9-.071,38.233-1.645,41,0,16.224,10.847,36.171,39.545,48,56,6.208,8.635,16.43,17.183,20,28h1V504ZM373,674H329v-1h-1l-13-41c-7.15-7.353-46.071-5.682-54,0-5.685,4.074-10.3,38.667-15,42H202v-2c7.715-10.329,8.84-26.447,14-39,10.864-26.429,20.16-55.562,31-82,4.983-12.154,8.334-24.647,13-36l3-11h49c3.833,17.106,12.465,35.254,19,51,10.742,25.881,16.345,52.081,27,78C363.1,645.4,370.761,659.95,373,674ZM841,504c0.838,7.956,5.31,15.534,8,22,4.651,11.18,7.684,22.6,12,33,15.779,38.03,25.44,77.413,41,115H857c-1.464-7.489-10.58-38.279-15-42-10.012-8.15-43.794-6.608-53,1-4.079,5.286-12.807,32.857-14,41H731c1.605-14.839,11.647-33.966,17-47,11.337-27.607,19.006-56.209,30-83,3.9-9.512,6.659-19.077,10-28,1.16-3.1,1.444-10.541,4-12h49ZM273,596c9.567-.17,19.618-0.411,29,0-0.685-6.559-11.835-41.128-15-45C285.163,567.089,275.505,579.991,273,596Zm542-44-14,44h7c4.981-3.272,17.349-.381,23,0v-2C824.034,584.469,823.13,558.929,815,552ZM175,710c20.486-.574,32.246,4.343,38,18,8.9,21.128-1.8,46.373-18,52-28.369,9.851-50.962-19.2-43-46C156.939,717.375,163.5,718.579,175,710ZM66,711h43v6H72v24h33v6H73c-2.777,8.258-1.082,22.9-1,33H66V711Zm198,0c17.02-.466,44.608-3.52,49,9,5.457,5.656,1.777,14.818,0,21-3.078,1.943-4.811,3.871-9,5v1c12.207,1.872,11.713,20.941,13,33h-7v-2c-4.794-7.756.5-21.882-8-26-5.4-4.8-21.094-3.161-31-3v30a21.509,21.509,0,0,1-7,1V711Zm101,0h7c-0.183,11.767-2.7,47.4,2,54,1.585,5.075,4.8,5.793,8,9,38.446,3.338,29.686-27.008,29-63h7c0.725,32.655,6.646,61.626-20,69-2.579.714-9.895,2.135-14,1-3.093-.855-6.5-3.041-10-4-1.858-2.8-5.525-5.117-7-8C361.771,758.781,364.936,725.842,365,711Zm103,0h11c2.489,19.453,16.145,38.624,21,58h1v-1c5.367-6.379,13.333-31.152,17-40,1.675-4.041,2.544-15.047,6-17h10v69h-7V739c0-4.848.98-12.869-1-16-1.481,13.049-12.02,31.308-17,43-2.926,6.869-1.01,13.812-11,14-7.892-17.871-16.737-37.769-22-57h-1v57h-6C464.584,766.7,467.927,728.007,468,711Zm-291,5c-8.329,6.229-14.631,8.66-18,20-5.566,18.732,8.635,45.047,30,39C217.567,766.915,217.523,714.724,177,716Zm94,1v26c13.225,0.426,32.563,2.853,36-7,3.376-4.11,1.208-9.367,0-14C298.556,716.66,285.741,716.871,271,717Z"/>
-</svg> -->
-
-	  
-	  
-	  
-	<div class="name-container">
-		<img class="logo-name" src="./img/luxterra.png" alt="">
-		
-	</div>
 </div> 
-
 
 
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
     integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-</script>
-<script>
-gsap.fromTo(
-	".loading-page",
-	{ opacity: 1 },
-	{
-	  opacity: 0,
-	  display: "none",
-	  duration: 2,
-	  delay: 3,
-	}
-  );
-  
-  gsap.fromTo(
-	".logo-name",
-	{
-	  x: 50,
-	  opacity: 0,
-	},
-	{
-	  x: 0,
-	  opacity: 1,
-	  duration: 2,
-	  delay: 0.5,
-	}
-  );
-  
-  gsap.fromTo(
-	".logo-parrafo",
-	{
-	  y: 50,
-	  opacity: 0,
-	},
-	{
-	  y: 0,
-	  opacity: 1,
-	  duration: 2,
-	  delay: 0.5,
-	}
-  );
-  
-</script>
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script type="text/javascript">
 flechas = document.getElementById('flechas')
 function loadApp() {
+	/*
+	Esta funcion carga la aplicacion flipbook.
+	 */
 
  	$('#canvas').fadeIn(1000);
 
@@ -211,18 +218,18 @@ function loadApp() {
 	// Create the flipbook
 
 	flipbook.turn({
-			
+			/*
+			Esta función se encarga de ajustar el tamaño de la revista 
+			*/
 			// Magazine width
 
-			// width: 1050,
-			// width: 1920,
-			width: 1175  ,
+			width: 1175,
+			// width: 922,
+			// width: 1400,
 
 			// Magazine height
 
-			// height: 800,
-			// height: 1358,
-			height: 832  ,
+			height: 832,
 
 			// Duration in millisecond
 
@@ -230,7 +237,7 @@ function loadApp() {
 
 			// Hardware acceleration
 
-			acceleration: true,
+			acceleration: !isChrome(),
 
 			// Enables gradients
 
@@ -273,9 +280,6 @@ function loadApp() {
 					$('.thumbnails .page-'+page).
 						parent().
 						addClass('current');
-
-
-
 				},
 
 				turned: function(event, page, view) {
@@ -303,7 +307,7 @@ function loadApp() {
 	});
 
 	// Zoom.js
-
+///////////////////////////////////////////////////////////////////////////////////////////
 	$('.magazine-viewport').zoom({
 		flipbook: $('.magazine'),
 
@@ -336,54 +340,52 @@ function loadApp() {
 
 			},
 
-			// zoomIn: function () {
-
-			// 	$('.thumbnails').hide();
-			// 	$('.made').hide();
-			// 	$('.magazine').removeClass('animated').addClass('zoom-in');
-			// 	$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+			zoomIn: function () {
+				$('.thumbnails').hide();
+				$('.made').hide();
+				$('.magazine').removeClass('animated').addClass('zoom-in');
+				$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
 				
-			// 	if (!window.escTip && !$.isTouch) {
-			// 		escTip = true;
+				if (!window.escTip && !$.isTouch) {
+					escTip = true;
+					$('<div />', {'class': 'exit-message'}).
+						html('<div>Press ESC to exit</div>').
+							appendTo($('body')).
+							delay(2000).
+							animate({opacity:0}, 500, function() {
+								$(this).remove();
+							});
+				}
+			},
 
-			// 		$('<div />', {'class': 'exit-message'}).
-			// 			html('<div>Press ESC to exit</div>').
-			// 				appendTo($('body')).
-			// 				delay(2000).
-			// 				animate({opacity:0}, 500, function() {
-			// 					$(this).remove();
-			// 				});
-			// 	}
-			// },
+			zoomOut: function () {
+				flechas.style.display = 'block';
+				$('.exit-message').hide();
+				$('.thumbnails').fadeIn();
+				$('.made').fadeIn();
+				$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
 
-			// zoomOut: function () {
-			// 	flechas.style.display = 'block';
-			// 	$('.exit-message').hide();
-			// 	$('.thumbnails').fadeIn();
-			// 	$('.made').fadeIn();
-			// 	$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+				setTimeout(function(){
+					$('.magazine').addClass('animated').removeClass('zoom-in');
+					resizeViewport();
+				}, 0);
 
-			// 	setTimeout(function(){
-			// 		$('.magazine').addClass('animated').removeClass('zoom-in');
-			// 		resizeViewport();
-			// 	}, 0);
-
-			// }
+			}
 		}
 	});
 
 	// Zoom event
 ////////////////////////////////////////////////////////////////////////////// ZOOM DESACTIVADO
 	// if ($.isTouch)
-	// 	$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
+	// 	$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
 	// else
-	// 	$('.magazine-viewport').on('zoom.tap', zoomTo);
+	// 	$('.magazine-viewport').bind('zoom.tap', zoomTo);
 ////////////////////////////////////////////////////////////////////////////// ZOOM DESACTIVADO
 
 	// Using arrow keys to turn the page
-
-	$(document).on('keydown',function(e){
-
+	
+	$(document).keydown(function(e){
+		/*utilizar las teclas para pasar de pagina*/
 		var previous = 37, next = 39, esc = 27;
 
 		switch (e.keyCode) {
@@ -410,6 +412,9 @@ function loadApp() {
 		}
 	});
 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
 	// URIs - Format #/page/1 
 
 	Hash.on('^page\/([0-9]*)$', {
@@ -430,15 +435,15 @@ function loadApp() {
 	});
 
 
-	$(window).on('resize',function() {
+	$(window).resize(function() {
 		resizeViewport();
-	}).on('orientationchange', function() {
+	}).bind('orientationchange', function() {
 		resizeViewport();
 	});
 
 	// Events for thumbnails
 
-	$('.thumbnails').on('click', function(event) {
+	$('.thumbnails').click(function(event) {
 		
 		var page;
 
@@ -449,35 +454,35 @@ function loadApp() {
 	});
 
 	$('.thumbnails li').
-		on($.mouseEvents.over, function() {
+		bind($.mouseEvents.over, function() {
 			
 			$(this).addClass('thumb-hover');
 
-		}).on($.mouseEvents.out, function() {
+		}).bind($.mouseEvents.out, function() {
 			
 			$(this).removeClass('thumb-hover');
 
 		});
 
 	if ($.isTouch) {
-		console.log('tactil')
-		// $('.thumbnails').
-		// 	addClass('thumbanils-touch').
-		// 	on($.mouseEvents.move, function(event) {
-		// 		event.preventDefault();
-		// 	});
+	
+		$('.thumbnails').
+			addClass('thumbanils-touch').
+			bind($.mouseEvents.move, function(event) {
+				event.preventDefault();
+			});
 
 	} else {
 
-		$('.thumbnails ul').on('mouseover', function() {
+		$('.thumbnails ul').mouseover(function() {
 
 			$('.thumbnails').addClass('thumbnails-hover');
 
-		}).on('mousedown',function() {
+		}).mousedown(function() {
 
 			return false;
 
-		}).on('mouseout',function() {
+		}).mouseout(function() {
 
 			$('.thumbnails').removeClass('thumbnails-hover');
 
@@ -487,32 +492,31 @@ function loadApp() {
 
 
 	// Regions
-
 	if ($.isTouch) {
-		$('.magazine').on('touchstart', regionClick);
+		$('.magazine').bind('touchstart', regionClick);
 	} else {
-		$('.magazine').on('click', regionClick);
+		$('.magazine').click(regionClick);
 	}
 
 	// Events for the next button
 
-	$('.next-button').on($.mouseEvents.over, function() {
+	$('.next-button').bind($.mouseEvents.over, function() {
 		
 		$(this).addClass('next-button-hover');
 
-	}).on($.mouseEvents.out, function() {
+	}).bind($.mouseEvents.out, function() {
 		
 		$(this).removeClass('next-button-hover');
 
-	}).on($.mouseEvents.down, function() {
+	}).bind($.mouseEvents.down, function() {
 		
 		$(this).addClass('next-button-down');
 
-	}).on($.mouseEvents.up, function() {
+	}).bind($.mouseEvents.up, function() {
 		
 		$(this).removeClass('next-button-down');
 
-	}).on('click', function() {
+	}).click(function() {
 		
 		$('.magazine').turn('next');
 
@@ -520,23 +524,23 @@ function loadApp() {
 
 	// Events for the next button
 	
-	$('.previous-button').on($.mouseEvents.over, function() {
+	$('.previous-button').bind($.mouseEvents.over, function() {
 		
 		$(this).addClass('previous-button-hover');
 
-	}).on($.mouseEvents.out, function() {
+	}).bind($.mouseEvents.out, function() {
 		
 		$(this).removeClass('previous-button-hover');
 
-	}).on($.mouseEvents.down, function() {
+	}).bind($.mouseEvents.down, function() {
 		
 		$(this).addClass('previous-button-down');
 
-	}).on($.mouseEvents.up, function() {
+	}).bind($.mouseEvents.up, function() {
 		
 		$(this).removeClass('previous-button-down');
 
-	}).on('click', function() {
+	}).click(function() {
 		
 		$('.magazine').turn('previous');
 
@@ -549,9 +553,10 @@ function loadApp() {
 
 }
 
+
 // Zoom icon
 ////////////////////////////////////////////////////////////////////// ICONO DESACTIVADO
-//  $('.zoom-icon').on('mouseover', function() { 
+//  $('.zoom-icon').bind('mouseover', function() { 
  	
 //  	if ($(this).hasClass('zoom-icon-in'))
 //  		$(this).addClass('zoom-icon-in-hover');
@@ -559,7 +564,7 @@ function loadApp() {
 //  	if ($(this).hasClass('zoom-icon-out'))
 //  		$(this).addClass('zoom-icon-out-hover');
  
-//  }).on('mouseout', function() { 
+//  }).bind('mouseout', function() { 
  	
 //  	 if ($(this).hasClass('zoom-icon-in'))
 //  		$(this).removeClass('zoom-icon-in-hover');
@@ -567,7 +572,7 @@ function loadApp() {
 //  	if ($(this).hasClass('zoom-icon-out'))
 //  		$(this).removeClass('zoom-icon-out-hover');
 
-//  }).on('click', function() {
+//  }).bind('click', function() {
 
 //  	if ($(this).hasClass('zoom-icon-in'))
 //  		$('.magazine-viewport').zoom('zoomIn');
@@ -577,12 +582,17 @@ function loadApp() {
 //  });
 
 //  $('#canvas').hide();
-////////////////////////////////////////////////////////////////////// ICONO DESACTIVADO
+///////////////////////////////////////////////////////////////////////////ICONO DESACTIVADO
 
+// Load the HTML4 version if there's not CSS transform
 
-// Load turn.js
-
-loadApp()
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['./lib/turn.js'],
+	nope: ['./lib/turn.html4.min.js'],
+	both: ['./lib/zoom.min.js', './js/magazine.js', './css/magazine.css'],
+	complete: loadApp
+});
 
 </script>
 

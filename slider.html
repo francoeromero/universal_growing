@@ -1,17 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Using turn.js and the new zoom feature</title>
+<title>Franco Romero</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
-<link rel="icon" type="image/png" href="../../pics/favicon.png" />
-<script type="text/javascript" src="../../extras/jquery.min.js"></script>
-<script type="text/javascript" src="../../extras/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../../lib/hash.js"></script>
-<script type="text/javascript" src="../../lib/turn.min.js"></script>
-<script type="text/javascript" src="../../lib/zoom.min.js"></script>
-<script type="text/javascript" src="js/magazine.js"></script>
-<link rel="stylesheet" href="css/magazine.css">
-<link rel="stylesheet" href="css/jquery.ui.css">
+<link rel="icon" type="image/png" href="./pics/favicon.png" />
+<script type="text/javascript" src="./extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="./extras/jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript" src="./extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="./lib/hash.js"></script>
 </head>
 <body>
 
@@ -20,6 +16,9 @@
 <div class="zoom-icon zoom-icon-in"></div>
 
 <div class="magazine-viewport">
+
+
+
 	<div class="container">
 		<div class="magazine">
 			<!-- Next button -->
@@ -49,8 +48,6 @@ function loadApp() {
 		setTimeout(loadApp, 10);
 		return;
 	}
-	
-	$( "#slider" ).slider();
 	
 	// Create the flipbook
 
@@ -82,7 +79,7 @@ function loadApp() {
 
 			// The number of pages
 
-			pages: 12,
+			pages: 30,
 
 			// Events
 
@@ -114,6 +111,7 @@ function loadApp() {
 					if (page==1) { 
 						$(this).turn('peel', 'br');
 					}
+
 
 				},
 
@@ -201,14 +199,14 @@ function loadApp() {
 	// Zoom event
 
 	if ($.isTouch)
-		$('.magazine-viewport').on('zoom.doubleTap', zoomTo);
+		$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
 	else
-		$('.magazine-viewport').on('zoom.tap', zoomTo);
+		$('.magazine-viewport').bind('zoom.tap', zoomTo);
 
 
 	// Using arrow keys to turn the page
 
-	$(document).on('keydown', function(e){
+	$(document).keydown(function(e){
 
 		var previous = 37, next = 39, esc = 27;
 
@@ -256,39 +254,39 @@ function loadApp() {
 	});
 
 
-	$(window).on('resize',function() {
+	$(window).resize(function() {
 		resizeViewport();
-	}).on('orientationchange', function() {
+	}).bind('orientationchange', function() {
 		resizeViewport();
 	});
 
 	// Regions
 
 	if ($.isTouch) {
-		$('.magazine').on('touchstart', regionClick);
+		$('.magazine').bind('touchstart', regionClick);
 	} else {
-		$('.magazine').on('click', regionClick);
+		$('.magazine').click(regionClick);
 	}
 
 	// Events for the next button
 
-	$('.next-button').on($.mouseEvents.over, function() {
+	$('.next-button').bind($.mouseEvents.over, function() {
 		
 		$(this).addClass('next-button-hover');
 
-	}).on($.mouseEvents.out, function() {
+	}).bind($.mouseEvents.out, function() {
 		
 		$(this).removeClass('next-button-hover');
 
-	}).on($.mouseEvents.down, function() {
+	}).bind($.mouseEvents.down, function() {
 		
 		$(this).addClass('next-button-down');
 
-	}).on($.mouseEvents.up, function() {
+	}).bind($.mouseEvents.up, function() {
 		
 		$(this).removeClass('next-button-down');
 
-	}).on('click', function() {
+	}).click(function() {
 		
 		$('.magazine').turn('next');
 
@@ -296,23 +294,23 @@ function loadApp() {
 
 	// Events for the next button
 	
-	$('.previous-button').on($.mouseEvents.over, function() {
+	$('.previous-button').bind($.mouseEvents.over, function() {
 		
 		$(this).addClass('previous-button-hover');
 
-	}).on($.mouseEvents.out, function() {
+	}).bind($.mouseEvents.out, function() {
 		
 		$(this).removeClass('previous-button-hover');
 
-	}).on($.mouseEvents.down, function() {
+	}).bind($.mouseEvents.down, function() {
 		
 		$(this).addClass('previous-button-down');
 
-	}).on($.mouseEvents.up, function() {
+	}).bind($.mouseEvents.up, function() {
 		
 		$(this).removeClass('previous-button-down');
 
-	}).on('click', function() {
+	}).click(function() {
 		
 		$('.magazine').turn('previous');
 
@@ -362,7 +360,7 @@ function loadApp() {
 
 // Zoom icon
 
- $('.zoom-icon').on('mouseover', function() { 
+ $('.zoom-icon').bind('mouseover', function() { 
  	
  	if ($(this).hasClass('zoom-icon-in'))
  		$(this).addClass('zoom-icon-in-hover');
@@ -370,7 +368,7 @@ function loadApp() {
  	if ($(this).hasClass('zoom-icon-out'))
  		$(this).addClass('zoom-icon-out-hover');
  
- }).on('mouseout', function() { 
+ }).bind('mouseout', function() { 
  	
  	 if ($(this).hasClass('zoom-icon-in'))
  		$(this).removeClass('zoom-icon-in-hover');
@@ -378,7 +376,7 @@ function loadApp() {
  	if ($(this).hasClass('zoom-icon-out'))
  		$(this).removeClass('zoom-icon-out-hover');
 
- }).on('click', function() {
+ }).bind('click', function() {
 
  	if ($(this).hasClass('zoom-icon-in'))
  		$('.magazine-viewport').zoom('zoomIn');
@@ -389,9 +387,16 @@ function loadApp() {
 
  $('#canvas').hide();
 
-// Load turn.js
 
-loadApp()
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['./lib/turn.min.js'],
+	nope: ['./lib/turn.html4.min.js', './css/jquery.ui.html4.css'],
+	both: ['./lib/zoom.min.js', './css/jquery.ui.css', './js/magazine.js', 'css/magazine.css'],
+	complete: loadApp
+});
 
 </script>
 
