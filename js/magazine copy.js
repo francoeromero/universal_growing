@@ -22,102 +22,6 @@
 // applyResponsiveRotation();
 // window.addEventListener('resize', applyResponsiveRotation);
 
-function cargarEnlace( ruta,ancho, largo, posicionY, posicionX) {
-    let contenedorVideo = $('<div></div>').css({
-        width: ancho,
-        height: largo,
-        top: posicionY,
-        left: posicionX,
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
-        zIndex: '9999999', 
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: 'transparent',
-        zIndex: '999999',
-    });
-
-    // Crear el iframe para el video de YouTube
-    let iframe = $('<iframe></iframe>')
-        .attr('src', `https://www.youtube.com/embed/${ruta}?autoplay=1&mute=1&controls=1`)
-        .attr('frameborder', '0')
-        .attr('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')
-        .attr('allowfullscreen', true)
-        .css({
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            backgroundSize: 'cover',
-        });
-
-    contenedorVideo.append(iframe);
-    return contenedorVideo;
-}
-
-
-function cargarMp4(ruta,ancho,largo,posicionY,posicionX){
-	let contenedorVideo = $('<div></div>').css({
-		width: ancho,
-		height: largo,
-		top: posicionX,
-		left: posicionY,
-		position: 'absolute',
-		transform: 'translate(-50%, -50%)',
-		zIndex: '9999999', 
-		// overflow: 'hidden',
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		background: 'transparent',
-		alignItems: 'center',
-		zIndex:'999999',
-	});
-
-	let cargarVideo = $('<video></video>')
-	.attr('src', ruta)
-	.attr('controls', true)
-	.attr('autoplay', true)
-	.attr('muted', true) // atributo HTML
-	.prop('muted', true) // propiedad real del DOM
-	.css({
-		width: '100%',
-		height: '100%',
-		objectFit: 'contain',
-		backgroundSize: 'cover',
-		transform:'scale(0.5)',
-	});
-	contenedorVideo.append(cargarVideo);
-	return contenedorVideo
-}
-// function cargarMp4(ruta,ancho,largo,posicionX,posicionY){
-
-// 	let cargarMp4 = $('<video></video>')
-// 	.attr('src', ruta)
-// 	.attr('autoplay', true)
-// 	.attr('controls', true)
-	
-// 	.attr('muted', true)
-// 	.css({
-// 		width: ancho,
-//         height: largo,
-// 		top: posicionY,
-// 		left: posicionX,
-// 		position: 'absolute',
-// 		transform: 'translate(-50%, -50%)',
-		
-// 		zIndex: '9999999',
-// 		overflow: 'hidden',
-// 		backgroundSize: 'contain',
-// 	});
-
-
-//     return cargarMp4;
-// }
-
-
-
-
 function cargarGif_flexible(ruta,ancho,largo,ubicacion_x, ubicacion_y, posicion){
 	let pos = '';
 	if (posicion == false){
@@ -252,18 +156,7 @@ function cargarGif_2(rutaUno,rutaDos){
 	contenedor.append(gifInferior);
 	return contenedor;
 }
-// ///////////////////////////////////////////
-function cargarActivadorVideo(){
-	let contenedor = $('<div></div>').css({
-		width: '100%',
-		height: '100%',
-		background: 'rgba(255, 0, 0, 0.5)',
-		zIndex: '99999999'
-	});
 
-	return contenedor;
-}
-// ///////////////////////////////////////////
 function cargarGif_3(rutaUno, rutaDos, rutaTres) {
 	let contenedor = $('<div></div>').css({
 		width: '100%',
@@ -537,50 +430,29 @@ function addPage(page, book) {
 	// Add the page to the flipbook
 	if (book.turn('addPage', element, page)) {
 		let webp = null;
-		lista_enlaces = [
-			'watch?v=hpJ32PyJC9Y',   
-			'watch?v=hpJ32PyJC9Y',   
-		]
-		lista_webm = [
-			'./webm/0.webm',
-			'./webm/0.webm'
-		]
-		lista_mp4 = [
-			'./video/0.mp4',
-			'./video/0.mp4'
-		];
+		let webpAnterior = null;
 		lista_gifs = [
 			'./gifs/0_opt.gif',
 			'./gifs/0_opt.gif'
-		];
+		]
 		lista_webp = [
-			'./webp/pc/0.webp',
-			'./webp/pc/1.webp',
-			'./webp/pc/2.webp',
-			'./webp/pc/3.webp',
-			'./webp/pc/4.webp',
-			'./webp/pc/5.webp',
-			'./webp/pc/6.webp'
+			'./webp/pc/0_a.webp',
+			'./webp/pc/1_b.webp',
+			'./webp/pc/3_c.webp',
+			'./webp/pc/x_d.webp',
+			'./webp/pc/6_e.webp',
+			'./webp/pc/5_f.webp',
+			'./webp/pc/2_g.webp',
 		];
-		lista_webp_iphone = [
-			'./webp/pc/0.webp',
-			'./webp/pc/1.webp',
-			'./webp/pc/2.webp',
-			'./webp/pc/3.webp',
-			'./webp/pc/4.webp',
-			'./webp/pc/5.webp',
-			'./webp/pc/6.webp'
+		lista_webp_movil = [
+			'./webp/pc/0_a.webp',
+			'./webp/pc/1_b.webp',
+			'./webp/pc/3_c.webp',
+			'./webp/pc/x_d.webp',
+			'./webp/pc/6_e.webp',
+			'./webp/pc/5_f.webp',
+			'./webp/pc/2_g.webp',
 		];
-		lista_webp_android = [
-			'./webp/pc/0.webp',
-			'./webp/pc/1.webp',
-			'./webp/pc/2.webp',
-			'./webp/pc/3.webp',
-			'./webp/pc/4.webp',
-			'./webp/pc/5.webp',
-			'./webp/pc/6.webp'
-		];
-
 
 		// Eliminar WebP existentes antes de agregar nuevos
         // $('.webp-element').remove();
@@ -588,195 +460,81 @@ function addPage(page, book) {
 		// Add the initial HTML
 		// It will contain a loader indicator and a gradient
 		element.html('<div class="gradient"></div><div class="loader"></div>');
-		/////////////////////////////////
-		// IPHONE
-		/////////////////////////////////
+		// //////////////////////////////////////////////////////////////////////////////////
 
-		if (/iPhone/i.test(navigator.userAgent)) {
-			// if(page == 29){
-			// 	if(flag_responsivo == false){
-			// 		// CELULAR
-				
-			// 		webp = cargarEnlace(lista_enlaces[0],'50%','55%','55%','70%');
-			// 		element.append(webp);
-			// 		// webp = cargarMp4(lista_webm[0],'50%','55%','55%','70%');
-			// 		// element.append(webp);
-			// 	}
-			// 	else if(flag_responsivo == true){
-			// 		// PC
-			// 		webp = cargarEnlace(lista_enlaces[0],'65%','53%','70%','55%');
-					
-			// 		element.append(webp);
-			// 	}
-			// }
-			
 
-			// Crear un elemento <div> que actuará
-			if(page == 29){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarWebp_1(lista_webp_iphone[0]);
-					// enlace = cargarActivadorVideo();
-					// enlace.on('click', function(){
-					// 	alert('testeado');
-					// });
-					// webp.append(enlace);
-					element.append(webp);
-					
-				}
-				else if(flag_responsivo == true){
-					// PC
-					webp = cargarWebp_1(lista_webp_iphone[0]);
-					element.append(webp);
-				}
+		// //////////////////////////////////////////////////////////////////////////////////
+		// Crear un elemento <div> que actuará
+		if(page == 15){
+			if(flag_responsivo == false){
+				webp = cargarWebp_1(lista_gifs[0]);
+				element.append(webp);
 			}
-			else if(page == 31){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarWebp_1(lista_webp_iphone[1]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_1(lista_webp_iphone[1]);
-					element.append(webp); 
-				}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_1(lista_gifs[0]);
+				element.append(webp);
 			}
-	
-			else if(page == 33){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarWebp_2(lista_webp_iphone[2]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp_iphone[2]);
-					element.append(webp); 
-				}
-			}
-			else if(page == 35){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp_iphone[3]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp_iphone[3]);
-					element.append(webp); 
-				}
-			}
-			else if(page == 37){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp_iphone[4]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp_iphone[4]);
-					element.append(webp); 
-				}
-			}
-			else if(page == 39){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp_iphone[5]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp_iphone[5]);
-					element.append(webp); 
-				}
-			}
-			else if(page == 41){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp_iphone[6]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp_iphone[6]);
-					element.append(webp); 
-				}
-			}
-			
-
 		}
-		/////////////////////////////////
-		// ANDROID
-		///////////////////////////////// 
-		else{
+		else if(page == 31){
+			if(flag_responsivo == false){
+				webp = cargarWebp_1(lista_webp_movil[1]);
+				element.append(webp); 
+			}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_1(lista_webp[1]);
+				element.append(webp); 
+			}
+		}
 
-			// Crear un elemento <div> que actuará
-			if(page == 13){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarMp4(lista_mp4[0],'10rem','450rem','-20rem','150rem');
-					element.append(webp);
-					
-				}
-				else if(flag_responsivo == true){
-					// PC
-					webp = cargarMp4(lista_mp4[0],'1000px','1000px','50%','80%');
-					element.append(webp);
-				}
+		else if(page == 33){
+			// 3 AMBIENTES
+			if(flag_responsivo == false){
+				webp = cargarWebp_2(lista_webp_movil[2]);
+				element.append(webp); 
 			}
-			else if(page == 31){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarWebp_1(lista_webp[1]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_1(lista_webp[1]);
-					element.append(webp); 
-				}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_2(lista_webp[2]);
+				element.append(webp); 
 			}
-	
-			else if(page == 33){
-				if(flag_responsivo == false){
-					// CELULAR
-					webp = cargarWebp_2(lista_webp[2]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[2]);
-					element.append(webp); 
-				}
+		}
+		else if(page == 35){
+			if(flag_responsivo == false){
+				webp = cargarWebp_2(lista_webp_movil[3]);
+				element.append(webp); 
 			}
-			else if(page == 35){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp[3]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[3]);
-					element.append(webp); 
-				}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_2(lista_webp[3]);
+				element.append(webp); 
 			}
-			else if(page == 37){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp[4]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[4]);
-					element.append(webp); 
-				}
+		}
+		else if(page == 37){
+			if(flag_responsivo == false){
+				webp = cargarWebp_2(lista_webp_movil[4]);
+				element.append(webp); 
 			}
-			else if(page == 39){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp[5]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[5]);
-					element.append(webp); 
-				}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_2(lista_webp[4]);
+				element.append(webp); 
 			}
-			else if(page == 41){
-				if(flag_responsivo == false){
-					webp = cargarWebp_2(lista_webp[6]);
-					element.append(webp); 
-				}
-				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[6]);
-					element.append(webp); 
-				}
+		}
+		else if(page == 39){
+			if(flag_responsivo == false){
+				webp = cargarWebp_2(lista_webp_movil[5]);
+				element.append(webp); 
+			}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_2(lista_webp[5]);
+				element.append(webp); 
+			}
+		}
+		else if(page == 41){
+			if(flag_responsivo == false){
+				webp = cargarWebp_2(lista_webp_movil[6]);
+				element.append(webp); 
+			}
+			else if(flag_responsivo == true){
+				webp = cargarWebp_2(lista_webp[6]);
+				element.append(webp); 
 			}
 		}
 
@@ -786,7 +544,8 @@ function addPage(page, book) {
 		// Load the page
 		loadPage(page, element);
 	}
-
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Agregar un evento 'turned' al libro
 	// $('.magazine').bind('turned', function(event, page, view) {
@@ -797,9 +556,11 @@ function addPage(page, book) {
 	// 	}
 	// });
 	// ////////////////////////////////////////////////////////////////////////////////////////////////////
-
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
+
 
 function loadPage(page, pageElement) {
 
@@ -829,19 +590,8 @@ function loadPage(page, pageElement) {
 
 	img.attr('src', 'pages/' +  page + '.jpg');
 
-	// ////////////////////////////////////////------------------------------/////////////////////////////////////////
-	// loadRegions(page, pageElement);
-	// let contenedor = $('<div></div>').css({
-	// 	width: '30%',
-	// 	height: '30%',
-	// 	position:'absolute',
-	// 	background: 'rgba(255, 0, 0, 0.5)',
-	// 	zIndex: '99999999'
-	// }).addClass('testeando')
-	// contenedor.click(function() {
-    //     alert('test');
-    // });
-	// pageElement.append(contenedor);
+	loadRegions(page, pageElement);
+
 }
 
 // Zoom in / Zoom out
@@ -866,52 +616,21 @@ function zoomTo(event) {
 
 // Load regions
 
-// function loadRegions(page, element) {
-
-// 	$.getJSON('../pages/'+page+'-regions.json')
-// 		.done(function(data) {
-// 			$.each(data, function(key, region) {
-// 				let newElement =  $('<div></div>')
-// 				.addClass(region.class)
-// 				.css({
-// 					width: region.width + 'px',  // Establecer el ancho
-// 					height: region.height + 'px', // Establecer la altura
-// 					position: 'absolute',
-// 					left: region.x + 'px', // Posición en X
-// 					top: region.y + 'px',  // Posición en Y
-// 					background: 'blue', // Color azul
-// 					opacity: 0.5, // Para que no cubra completamente la vista
-// 					cursor: 'pointer',
-// 					zIndex: 999999
-// 				})
-// 				alert('test')
-			
-// 			$(element).append(newElement);
-// 			});
-
-// 		});
-// 		return element
-// }
-
-
-// ANTIGUO 
 function loadRegions(page, element) {
-	console.log(page)
-	// $.getJSON('../pages/1-regions.json').done(function(data) {
-	$.getJSON('../pages/'+page+'-regions.json').done(function(data) {
-			console.log('test')
+
+	$.getJSON('../pages/'+page+'-regions.json').
+		done(function(data) {
+
 			$.each(data, function(key, region) {
 				addRegion(region, element);
 			});
 		});
 }
 
-
-
-// ANTIGUO
 // Add region
+
 function addRegion(region, pageElement) {
-	console.log("Agregando región:", region);
+	
 	var reg = $('<div />', {'class': 'region  ' + region['class']}),
 		options = $('.magazine').turn('options'),
 		pageWidth = options.width/2,
@@ -1323,7 +1042,7 @@ window.addEventListener('load', () => {
     if (contenedor) {
         contenedor.scrollTo({
             //left: 1000, // Cambia este valor a la posición deseada en el eje x
-            left: 800, // Cambia este valor a la posición deseada en el eje x
+            left: 500, // Cambia este valor a la posición deseada en el eje x
             behavior: 'smooth' // 'smooth' para desplazamiento suave o 'auto' para instantáneo
         });
     }
