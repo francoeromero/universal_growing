@@ -705,13 +705,13 @@ function addPage(page, book) {
 			if(page == 13){
 				if(flag_responsivo == false){
 					// CELULAR
-					webp = cargarMp4(lista_mp4[0],'10rem','450rem','-20rem','150rem');
+					webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
 					element.append(webp);
 					
 				}
 				else if(flag_responsivo == true){
 					// PC
-					webp = cargarMp4(lista_mp4[0],'1000px','1000px','50%','80%');
+					webp = cargarMp4(lista_mp4[0],'120%','60%','50%','80%');
 					element.append(webp);
 				}
 			}
