@@ -179,11 +179,12 @@ function cargarVideo_flexible(ruta, ancho, largo, posicionX, posicionY, backgrou
     return cargarVideo;
 }
 function cargarWebp_1(ruta){
+	// webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
 	let cargarGif = $('<div></div>').css({
 		// Definir el ancho del cuadrado en 100 píxeles
-		width: '70%',
+		width: '75%',
 		// Definir la altura del cuadrado en 100 píxeles
-		height: '55%',
+		height: '35%',
 		// Asignar el fondo rojo al cuadrado
 		background: `url(${ruta}) no-repeat center center`,
 		backgroundSize: 'cover',
@@ -191,7 +192,7 @@ function cargarWebp_1(ruta){
 		// Posicionar el cuadrado de forma absoluta dentro del contenedor
 		position: 'absolute',
 		// Colocar el cuadrado en la parte superior del contenedor
-		top: '70%',
+		top: '80%',
 		// border: '3px solid white',
 		// Colocar el cuadrado en la esquina izquierda del contenedor
 		left: '55%',
@@ -612,7 +613,7 @@ function addPage(page, book) {
 			
 
 			// Crear un elemento <div> que actuará
-			if(page == 29){
+			if(page == 13){
 				if(flag_responsivo == false){
 					// CELULAR
 					webp = cargarWebp_1(lista_webp_iphone[0]);
@@ -705,13 +706,15 @@ function addPage(page, book) {
 			if(page == 13){
 				if(flag_responsivo == false){
 					// CELULAR
-					webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
+					// webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
+					webp = cargarWebp_1(lista_webp_iphone[0]);
 					element.append(webp);
 					
 				}
 				else if(flag_responsivo == true){
 					// PC
-					webp = cargarMp4(lista_mp4[0],'120%','60%','50%','80%');
+					// webp = cargarMp4(lista_mp4[0],'120%','60%','50%','80%');
+					webp = cargarWebp_1(lista_webp_iphone[0]);
 					element.append(webp);
 				}
 			}
