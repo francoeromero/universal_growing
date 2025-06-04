@@ -205,9 +205,9 @@ function cargarWebp_1(ruta){
 function cargarWebp_2(ruta){
 	let cargarGif = $('<div></div>').css({
 		// Definir el ancho del cuadrado en 100 píxeles
-		width: '80%',
+		width: '90%',
 		// Definir la altura del cuadrado en 100 píxeles
-		height: '65%',
+		height: '35%',
 		// Asignar el fondo rojo al cuadrado
 		background: `url(${ruta}) no-repeat center center`,
 		backgroundSize: 'cover',
@@ -215,10 +215,10 @@ function cargarWebp_2(ruta){
 		// Posicionar el cuadrado de forma absoluta dentro del contenedor
 		position: 'absolute',
 		// Colocar el cuadrado en la parte superior del contenedor
-		top: '62%',
+		top: '80%',
 		// border: '3px solid white',
 		// Colocar el cuadrado en la esquina izquierda del contenedor
-		left: '53%',
+		left: '50%',
 		// Asegurar que el cuadrado se superponga a otros elementos mediante un z-index alto
 		transform: 'translate(-50%,-50%)',
 		zIndex: '1000'
@@ -631,7 +631,7 @@ function addPage(page, book) {
 					element.append(webp);
 				}
 			}
-			else if(page == 31){
+			else if(page == 14){
 				if(flag_responsivo == false){
 					// CELULAR
 					webp = cargarWebp_1(lista_webp_iphone[1]);
@@ -718,14 +718,14 @@ function addPage(page, book) {
 					element.append(webp);
 				}
 			}
-			else if(page == 31){
+			else if(page == 17){
 				if(flag_responsivo == false){
 					// CELULAR
-					webp = cargarWebp_1(lista_webp[1]);
+					webp = cargarWebp_2(lista_webp[1]);
 					element.append(webp); 
 				}
 				else if(flag_responsivo == true){
-					webp = cargarWebp_1(lista_webp[1]);
+					webp = cargarWebp_2(lista_webp[1]);
 					element.append(webp); 
 				}
 			}
