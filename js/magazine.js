@@ -631,14 +631,14 @@ function addPage(page, book) {
 					element.append(webp);
 				}
 			}
-			else if(page == 14){
+			else if(page == 17){
 				if(flag_responsivo == false){
 					// CELULAR
-					webp = cargarWebp_1(lista_webp_iphone[1]);
+					webp = cargarWebp_2(lista_webp_iphone[1]);
 					element.append(webp); 
 				}
 				else if(flag_responsivo == true){
-					webp = cargarWebp_1(lista_webp_iphone[1]);
+					webp = cargarWebp_2(lista_webp_iphone[1]);
 					element.append(webp); 
 				}
 			}
