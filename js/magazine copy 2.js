@@ -2,6 +2,26 @@
  * Magazine sample
 */
 
+// function applyResponsiveRotation() {
+//     if (window.innerWidth <= 600) {
+//         document.body.style.transform = 'rotate(-90deg)';
+//         document.body.style.transformOrigin = 'center';
+//         document.body.style.width = '100vh';
+//         document.body.style.height = '100vw';
+//         document.body.style.overflow = 'hidden';
+//     } else {
+//         // Restablecer estilos para pantallas más grandes
+//         document.body.style.transform = '';
+//         document.body.style.width = '';
+//         document.body.style.height = '';
+//         document.body.style.overflow = '';
+//     }
+// }
+
+// // Aplicar al cargar y al cambiar el tamaño de la pantalla
+// applyResponsiveRotation();
+// window.addEventListener('resize', applyResponsiveRotation);
+
 function cargarEnlace( ruta,ancho, largo, posicionY, posicionX) {
     let contenedorVideo = $('<div></div>').css({
         width: ancho,
@@ -36,6 +56,66 @@ function cargarEnlace( ruta,ancho, largo, posicionY, posicionX) {
 }
 
 
+function cargarMp4(ruta,ancho,largo,posicionY,posicionX){
+	let contenedorVideo = $('<div></div>').css({
+		width: ancho,
+		height: largo,
+		top: posicionX,
+		left: posicionY,
+		position: 'absolute',
+		transform: 'translate(-50%, -50%)',
+		zIndex: '9999999', 
+		// overflow: 'hidden',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		background: 'transparent',
+		alignItems: 'center',
+		zIndex:'999999',
+	});
+
+	let cargarVideo = $('<video></video>')
+	.attr('src', ruta)
+	.attr('controls', true)
+	.attr('autoplay', true)
+	.attr('muted', true) // atributo HTML
+	.prop('muted', true) // propiedad real del DOM
+	.css({
+		width: '100%',
+		height: '100%',
+		objectFit: 'contain',
+		backgroundSize: 'cover',
+		transform:'scale(0.5)',
+	});
+	contenedorVideo.append(cargarVideo);
+	return contenedorVideo
+}
+// function cargarMp4(ruta,ancho,largo,posicionX,posicionY){
+
+// 	let cargarMp4 = $('<video></video>')
+// 	.attr('src', ruta)
+// 	.attr('autoplay', true)
+// 	.attr('controls', true)
+	
+// 	.attr('muted', true)
+// 	.css({
+// 		width: ancho,
+//         height: largo,
+// 		top: posicionY,
+// 		left: posicionX,
+// 		position: 'absolute',
+// 		transform: 'translate(-50%, -50%)',
+		
+// 		zIndex: '9999999',
+// 		overflow: 'hidden',
+// 		backgroundSize: 'contain',
+// 	});
+
+
+//     return cargarMp4;
+// }
+
+
 
 
 function cargarGif_flexible(ruta,ancho,largo,ubicacion_x, ubicacion_y, posicion){
@@ -68,6 +148,8 @@ function cargarGif_flexible(ruta,ancho,largo,ubicacion_x, ubicacion_y, posicion)
 	});
 	return cargarGif
 }
+
+
 function cargarVideo_flexible(ruta, ancho, largo, posicionX, posicionY, backgroundSize) {
     let cargarVideo = $('<div></div>').css({
         width: '100%',
@@ -97,11 +179,12 @@ function cargarVideo_flexible(ruta, ancho, largo, posicionX, posicionY, backgrou
     return cargarVideo;
 }
 function cargarWebp_1(ruta){
+	// webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
 	let cargarGif = $('<div></div>').css({
 		// Definir el ancho del cuadrado en 100 píxeles
-		width: '70%',
+		width: '75%',
 		// Definir la altura del cuadrado en 100 píxeles
-		height: '55%',
+		height: '35%',
 		// Asignar el fondo rojo al cuadrado
 		background: `url(${ruta}) no-repeat center center`,
 		backgroundSize: 'cover',
@@ -109,7 +192,7 @@ function cargarWebp_1(ruta){
 		// Posicionar el cuadrado de forma absoluta dentro del contenedor
 		position: 'absolute',
 		// Colocar el cuadrado en la parte superior del contenedor
-		top: '70%',
+		top: '80%',
 		// border: '3px solid white',
 		// Colocar el cuadrado en la esquina izquierda del contenedor
 		left: '55%',
@@ -119,15 +202,12 @@ function cargarWebp_1(ruta){
 	});
 	return cargarGif
 }
-
-
-
 function cargarWebp_2(ruta){
 	let cargarGif = $('<div></div>').css({
 		// Definir el ancho del cuadrado en 100 píxeles
-		width: '80%',
+		width: '90%',
 		// Definir la altura del cuadrado en 100 píxeles
-		height: '55%',
+		height: '35%',
 		// Asignar el fondo rojo al cuadrado
 		background: `url(${ruta}) no-repeat center center`,
 		backgroundSize: 'cover',
@@ -135,42 +215,16 @@ function cargarWebp_2(ruta){
 		// Posicionar el cuadrado de forma absoluta dentro del contenedor
 		position: 'absolute',
 		// Colocar el cuadrado en la parte superior del contenedor
-		top: '70%',
+		top: '80%',
 		// border: '3px solid white',
 		// Colocar el cuadrado en la esquina izquierda del contenedor
-		left: '53%',
+		left: '50%',
 		// Asegurar que el cuadrado se superponga a otros elementos mediante un z-index alto
 		transform: 'translate(-50%,-50%)',
 		zIndex: '1000'
 	});
 	return cargarGif
 }
-function cargarWebp_3(ruta){
-	let cargarGif = $('<div></div>').css({
-		// Definir el ancho del cuadrado en 100 píxeles
-		width: '80%',
-		// Definir la altura del cuadrado en 100 píxeles
-		height: '69%',
-		// Asignar el fondo rojo al cuadrado
-		background: `url(${ruta}) no-repeat center center`,
-		backgroundSize: 'cover',
-		zIndex: '999',
-		// Posicionar el cuadrado de forma absoluta dentro del contenedor
-		position: 'absolute',
-		// Colocar el cuadrado en la parte superior del contenedor
-		top: '63%',
-		// border: '3px solid white',
-		// Colocar el cuadrado en la esquina izquierda del contenedor
-		left: '53%',
-		// Asegurar que el cuadrado se superponga a otros elementos mediante un z-index alto
-		transform: 'translate(-50%,-50%)',
-		zIndex: '1000'
-	});
-	return cargarGif
-}
-
-
-
 function cargarGif_2(rutaUno,rutaDos){
 	let contenedor = $('<div></div>').css({
 		width: '100%',
@@ -211,7 +265,6 @@ function cargarActivadorVideo(){
 	return contenedor;
 }
 // ///////////////////////////////////////////
-
 function cargarGif_3(rutaUno, rutaDos, rutaTres) {
 	let contenedor = $('<div></div>').css({
 		width: '100%',
@@ -360,49 +413,6 @@ function cargarGif_trama1(rutaUno, rutaDos, rutaTres, rutaCuatro,rutaCinco) {
 
 	return contenedor;
 }
-function cargarGif_trama2(rutaUno, rutaDos, rutaTres, rutaCuatro) {
-    let contenedor = $('<div></div>').css({
-        width: '100%',
-        height: '100%',
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        display: 'grid',
-        gridTemplateColumns: '50% 50%',
-        gridTemplateRows: '33.33% 33.33% 33.33%',
-        // gap: '2px' 
-    });
-
-    let gifSuperiorIzq = $('<div></div>').css({
-        background: `url(${rutaUno}) no-repeat center center`,
-        backgroundSize: 'cover'
-    });
-
-    let gifMedioIzq = $('<div></div>').css({
-        background: `url(${rutaDos}) no-repeat center center`,
-        backgroundSize: 'cover'
-    });
-
-    let gifDerecha = $('<div></div>').css({
-        background: `url(${rutaTres}) no-repeat center center`,
-        backgroundSize: 'cover',
-        gridRow: '1 / 3' // Hace que este div ocupe dos filas
-    });
-
-    let gifInferior = $('<div></div>').css({
-        background: `url(${rutaCuatro}) no-repeat center center`,
-        backgroundSize: 'cover',
-        gridColumn: '1 / 3' // Hace que este div ocupe ambas columnas
-    });
-
-    // Agregar elementos al contenedor
-    contenedor.append(gifSuperiorIzq);
-    contenedor.append(gifMedioIzq);
-    contenedor.append(gifDerecha);
-    contenedor.append(gifInferior);
-
-    return contenedor;
-}
 function cargarGif_trama3(rutaUno, rutaDos, rutaTres, rutaCuatro) {
 	let contenedor = $('<div></div>').css({
 		width: '100%',
@@ -414,8 +424,6 @@ function cargarGif_trama3(rutaUno, rutaDos, rutaTres, rutaCuatro) {
 		flexDirection: 'column',
 		// gap: '2px' 
 	});
-
-
 
 	// Fila 1 - Dos GIFs (50% - 50%)
 	let fila1 = $('<div></div>').css({
@@ -460,72 +468,49 @@ function cargarGif_trama3(rutaUno, rutaDos, rutaTres, rutaCuatro) {
 	return contenedor;
 }
 
-function cargarMp4(ruta,escala,posicionX,posicionY){
-	let contenedorVideo = $('<div></div>').css({
-		width: '45%',
-		height: '38%',
-		left: posicionX,
-		top: posicionY,
-		position: 'absolute',
-		transform: 'translate(-50%, -50%)',
-		zIndex: '9999999', 
-		overflow: 'hidden',
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		background: 'black',
-		alignItems: 'center',
-		zIndex:'999999',
-		objectFit: 'contain',
-		backgroundSize: 'cover',
-		scale: escala
-	});
 
-	let cargarVideo = $('<video></video>')
-	.attr('src', ruta)
+function cargarGif_trama2(rutaUno, rutaDos, rutaTres, rutaCuatro) {
+    let contenedor = $('<div></div>').css({
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        display: 'grid',
+        gridTemplateColumns: '50% 50%',
+        gridTemplateRows: '33.33% 33.33% 33.33%',
+        // gap: '2px' 
+    });
 
-	.attr('autoplay', true)
-	.attr('muted', true) 
-	.css({
-		width: '105%',
-		height: '105%',
-		
-	});
-	contenedorVideo.append(cargarVideo);
-	return contenedorVideo
-}
-function cargarMp4_2(ruta,escala,posicionX,posicionY){
-	let contenedorVideo = $('<div></div>').css({
-		width: '56%',
-		height: '46%',
-		left: posicionX,
-		top: posicionY,
-		position: 'absolute',
-		transform: 'translate(-50%, -50%)',
-		zIndex: '9999999', 
-		overflow: 'hidden',
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		background: 'rgba(255, 255, 255, 0.9)',
-		alignItems: 'center',
-		zIndex:'999999',
-		objectFit: 'contain',
-		backgroundSize: 'cover',
-		scale: escala
-	});
+    let gifSuperiorIzq = $('<div></div>').css({
+        background: `url(${rutaUno}) no-repeat center center`,
+        backgroundSize: 'cover'
+    });
 
-	let cargarVideo = $('<video></video>')
-	.attr('src', ruta)
-	.attr('autoplay', true)
-	.attr('muted', true) 
-	.css({
-		width: '105%',
-		height: '105%',
-		
-	});
-	contenedorVideo.append(cargarVideo);
-	return contenedorVideo
+    let gifMedioIzq = $('<div></div>').css({
+        background: `url(${rutaDos}) no-repeat center center`,
+        backgroundSize: 'cover'
+    });
+
+    let gifDerecha = $('<div></div>').css({
+        background: `url(${rutaTres}) no-repeat center center`,
+        backgroundSize: 'cover',
+        gridRow: '1 / 3' // Hace que este div ocupe dos filas
+    });
+
+    let gifInferior = $('<div></div>').css({
+        background: `url(${rutaCuatro}) no-repeat center center`,
+        backgroundSize: 'cover',
+        gridColumn: '1 / 3' // Hace que este div ocupe ambas columnas
+    });
+
+    // Agregar elementos al contenedor
+    contenedor.append(gifSuperiorIzq);
+    contenedor.append(gifMedioIzq);
+    contenedor.append(gifDerecha);
+    contenedor.append(gifInferior);
+
+    return contenedor;
 }
 
 let flag_responsivo = true;
@@ -536,12 +521,12 @@ function checkResponsive(){
 	else{
 		flag_responsivo = true;
 	}
-	console.log('ACTIVADO PARA CELULAR');
+	console.log('flag',flag_responsivo);
 }
 checkResponsive();
 
-function addPage(page, book) {
 
+function addPage(page, book) {
 	var id, pages = book.turn('pages');
 
 	// Create a new element for this page
@@ -550,18 +535,24 @@ function addPage(page, book) {
 	const nextButton = document.querySelector('.next-button');
 	const previousButton = document.querySelector('.previous-button');
 
-
 	// Add the page to the flipbook
 	if (book.turn('addPage', element, page)) {
-		// LISTAS
+		let webp = null;
+		lista_enlaces = [
+			'watch?v=hpJ32PyJC9Y',   
+			'watch?v=hpJ32PyJC9Y',   
+		]
+		lista_webm = [
+			'./webm/0.webm',
+			'./webm/0.webm'
+		]
 		lista_mp4 = [
 			'./video/0.mp4',
-			'./video/1.mp4',
-			'./video/2.mp4',
-			'./video/3.mp4',
-			'./video/4.mp4',
-			'./video/5.mp4',
-			'./video/6.mp4',
+			'./video/0.mp4'
+		];
+		lista_gifs = [
+			'./gifs/0_opt.gif',
+			'./gifs/0_opt.gif'
 		];
 		lista_webp = [
 			'./webp/pc/0.webp',
@@ -572,15 +563,14 @@ function addPage(page, book) {
 			'./webp/pc/5.webp',
 			'./webp/pc/6.webp'
 		];
-		// '#'desactivado imagenes estaticas para cel 
 		lista_webp_iphone = [
-			'#',
-			'#',
-			'#',
-			'#',
-			'#',
-			'#',
-			'#'
+			'./webp/pc/0.webp',
+			'./webp/pc/1.webp',
+			'./webp/pc/2.webp',
+			'./webp/pc/3.webp',
+			'./webp/pc/4.webp',
+			'./webp/pc/5.webp',
+			'./webp/pc/6.webp'
 		];
 		lista_webp_android = [
 			'./webp/pc/0.webp',
@@ -591,166 +581,227 @@ function addPage(page, book) {
 			'./webp/pc/5.webp',
 			'./webp/pc/6.webp'
 		];
+
+
+		// Eliminar WebP existentes antes de agregar nuevos
+        // $('.webp-element').remove();
+
 		// Add the initial HTML
 		// It will contain a loader indicator and a gradient
 		element.html('<div class="gradient"></div><div class="loader"></div>');
 		/////////////////////////////////
 		// IPHONE
 		/////////////////////////////////
-		if (/iPhone/i.test(navigator.userAgent)){
-			if(page == 33){
+
+		if (/iPhone/i.test(navigator.userAgent)) {
+			// if(page == 29){
+			// 	if(flag_responsivo == false){
+			// 		// CELULAR
+				
+			// 		webp = cargarEnlace(lista_enlaces[0],'50%','55%','55%','70%');
+			// 		element.append(webp);
+			// 		// webp = cargarMp4(lista_webm[0],'50%','55%','55%','70%');
+			// 		// element.append(webp);
+			// 	}
+			// 	else if(flag_responsivo == true){
+			// 		// PC
+			// 		webp = cargarEnlace(lista_enlaces[0],'65%','53%','70%','55%');
+					
+			// 		element.append(webp);
+			// 	}
+			// }
+			
+
+			// Crear un elemento <div> que actuará
+			if(page == 13){
 				if(flag_responsivo == false){
-					// video = cargarMp4(lista_mp4[0],'1.45','64%','79%');
-					// element.append(video);
-					webp = cargarWebp_2(lista_webp_iphone[0]);
+					// CELULAR
+					webp = cargarWebp_1(lista_webp_iphone[0]);
+					// enlace = cargarActivadorVideo();
+					// enlace.on('click', function(){
+					// 	alert('testeado');
+					// });
+					// webp.append(enlace);
+					element.append(webp);
+					
+				}
+				else if(flag_responsivo == true){
+					// PC
+					webp = cargarWebp_1(lista_webp_iphone[0]);
 					element.append(webp);
 				}
-
+			}
+			else if(page == 17){
+				if(flag_responsivo == false){
+					// CELULAR
+					webp = cargarWebp_2(lista_webp_iphone[1]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[1]);
+					element.append(webp); 
+				}
+			}
+	
+			else if(page == 33){
+				if(flag_responsivo == false){
+					// CELULAR
+					webp = cargarWebp_2(lista_webp_iphone[2]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[2]);
+					element.append(webp); 
+				}
 			}
 			else if(page == 35){
 				if(flag_responsivo == false){
-					// video = cargarMp4(lista_mp4[1],'1.45','64%','79%');
-					// element.append(video);
-					webp = cargarWebp_2(lista_webp_iphone[1]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp_iphone[3]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[3]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 37){
 				if(flag_responsivo == false){
-					// video = cargarMp4_2(lista_mp4[2],'1.45','64%','71%');
-					// element.append(video);
-					webp = cargarWebp_3(lista_webp_iphone[2]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp_iphone[4]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[4]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 39){
 				if(flag_responsivo == false){
-					// video = cargarMp4_2(lista_mp4[3],'1.45','64%','71%');
-					// element.append(video);
-					webp = cargarWebp_3(lista_webp_iphone[3]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp_iphone[5]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[5]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 41){
 				if(flag_responsivo == false){
-					// video = cargarMp4_2(lista_mp4[4],'1.45','64%','71%');
-					// element.append(video);
-					webp = cargarWebp_3(lista_webp_iphone[4]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp_iphone[6]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp_iphone[6]);
+					element.append(webp); 
 				}
 			}
-			else if(page == 43){
-				if(flag_responsivo == false){
-					// video = cargarMp4_2(lista_mp4[5],'1.45','64%','71%');
-					// element.append(video);
-					webp = cargarWebp_3(lista_webp_iphone[5]);
-					element.append(webp);
-				}
-			}
-			else if(page == 45){
-				if(flag_responsivo == false){
-					// video = cargarMp4_2(lista_mp4[6],'1.45','64%','71%');
-					// element.append(video);
-					webp = cargarWebp_3(lista_webp_iphone[6]);
-					element.append(webp);
-				}
-			}
+			
+
 		}
 		/////////////////////////////////
-		// ANDROID Y PC
+		// ANDROID
 		///////////////////////////////// 
 		else{
-			
-			if(page == 33){
+
+			// Crear un elemento <div> que actuará
+			if(page == 13){
 				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_2(lista_webp_android[0]);
+					// CELULAR
+					// webp = cargarMp4(lista_mp4[0],'90%','50%','50%','80%');
+					webp = cargarWebp_1(lista_webp_iphone[0]);
+					element.append(webp);
+					
+				}
+				else if(flag_responsivo == true){
+					// PC
+					// webp = cargarMp4(lista_mp4[0],'120%','60%','50%','80%');
+					webp = cargarWebp_1(lista_webp_iphone[0]);
 					element.append(webp);
 				}
-				// pc
+			}
+			else if(page == 17){
+				if(flag_responsivo == false){
+					// CELULAR
+					webp = cargarWebp_2(lista_webp[1]);
+					element.append(webp); 
+				}
 				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[0]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[1]);
+					element.append(webp); 
+				}
+			}
+	
+			else if(page == 33){
+				if(flag_responsivo == false){
+					// CELULAR
+					webp = cargarWebp_2(lista_webp[2]);
+					element.append(webp); 
+				}
+				else if(flag_responsivo == true){
+					webp = cargarWebp_2(lista_webp[2]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 35){
 				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_2(lista_webp_android[1]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[3]);
+					element.append(webp); 
 				}
-				// pc
 				else if(flag_responsivo == true){
-					webp = cargarWebp_2(lista_webp[1]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[3]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 37){
 				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_3(lista_webp_android[2]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[4]);
+					element.append(webp); 
 				}
-				// pc
 				else if(flag_responsivo == true){
-					webp = cargarWebp_3(lista_webp[2]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[4]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 39){
 				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_3(lista_webp_android[3]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[5]);
+					element.append(webp); 
 				}
-				// pc
 				else if(flag_responsivo == true){
-					webp = cargarWebp_3(lista_webp[3]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[5]);
+					element.append(webp); 
 				}
 			}
 			else if(page == 41){
 				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_3(lista_webp_android[4]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[6]);
+					element.append(webp); 
 				}
-				// pc
 				else if(flag_responsivo == true){
-					webp = cargarWebp_3(lista_webp[4]);
-					element.append(webp);
-				}
-			}
-
-			else if(page == 43){
-				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_3(lista_webp_android[5]);
-					element.append(webp);
-				}
-				// pc
-				else if(flag_responsivo == true){
-					webp = cargarWebp_3(lista_webp[5]);
-					element.append(webp);
-				}
-			}
-			else if(page == 45){
-				if(flag_responsivo == false){
-					// andriid
-					webp = cargarWebp_3(lista_webp_android[6]);
-					element.append(webp);
-				}
-				// pc
-				else if(flag_responsivo == true){
-					webp = cargarWebp_3(lista_webp[6]);
-					element.append(webp);
+					webp = cargarWebp_2(lista_webp[6]);
+					element.append(webp); 
 				}
 			}
 		}
 
+		
+
+		//////////////////////////////////////////////////////////////////////// 
 		// Load the page
 		loadPage(page, element);
+		
 	}
+
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Agregar un evento 'turned' al libro
+	// $('.magazine').bind('turned', function(event, page, view) {
+	// 	if(page == 29 && flag == true){
+			
+	// 		console.log('test');
+	// 		flag = false;
+	// 	}
+	// });
+	// ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 }
 
@@ -760,11 +811,11 @@ function loadPage(page, pageElement) {
 
 	var img = $('<img />');
 
-	img.on('mousedown', function(e) {
+	img.mousedown(function(e) {
 		e.preventDefault();
 	});
 
-	img.on('load', function() {
+	img.load(function() {
 		
 		// Set the size
 		$(this).css({width: '100%', height: '100%'});
@@ -781,304 +832,90 @@ function loadPage(page, pageElement) {
 	// Load the page
 
 	img.attr('src', 'pages/' +  page + '.jpg');
-	
-	loadRegions(page, pageElement);
-	
-
 
 	// ////////////////////////////////////////------------------------------/////////////////////////////////////////
-	if(page == 13 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				userSelect: 'none',
-				fontWeight: '400',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/0.mp4');
-			});
-			pageElement.append(contenedor);
-		}
-	}
-	else if(page == 33 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				userSelect: 'none',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/1.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-	else if(page == 35 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-				transform: 'translateY(-15%)'
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				userSelect: 'none',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-			contenedor.click(function() {
-				createVideoElement('./video/2.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-	else if(page == 37 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-				transform: 'translateY(-15%)'
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				userSelect: 'none',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/3.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-	else if(page == 39 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-				transform: 'translateY(-15%)'
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				userSelect: 'none',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/4.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-	else if(page == 41 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-				transform: 'translateY(-15%)'
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				userSelect: 'none',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/5.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-	else if(page == 43 && /iPhone/i.test(navigator.userAgent)){
-		if(flag_responsivo == false){
-			let contenedor = $('<div></div>').css({
-				width: '70%',
-				height: '50%',
-				bottom:40,
-				right:60,
-				position:'absolute',
-				background: 'rgba(0,0,0,0)',
-				zIndex: '99999999',
-				display: 'flex',
-				justifyContent: 'center', // Centra horizontalmente el contenido
-				alignItems: 'center', // Centra verticalmente el contenido
-				cursor: 'pointer',
-				transform: 'translateY(-15%)'
-			}).addClass('testeando')
-			let texto = $('<p></p>').text('CLICK PARA REPRODUCIR').css({
-				color: 'black',
-				fontSize: '20px',
-				fontWeight: '400',
-				textAlign: 'center',
-				background: 'rgba(255, 255, 255, 1)', // Fondo semitransparente para mejor visibilidad
-				padding: '10px 20px',
-				borderRadius: '5px',
-				'font-family': "'Quicksand', sans-serif",
-				zIndex: 999999,
-			});
-			contenedor.append(texto);
-
-
-			contenedor.click(function() {
-				createVideoElement('./video/6.mp4');
-			});
-			pageElement.append(contenedor);
-		}}
-
+	// loadRegions(page, pageElement);
+	// let contenedor = $('<div></div>').css({
+	// 	width: '30%',
+	// 	height: '30%',
+	// 	position:'absolute',
+	// 	background: 'rgba(255, 0, 0, 0.5)',
+	// 	zIndex: '99999999'
+	// }).addClass('testeando')
+	// contenedor.click(function() {
+    //     alert('test');
+    // });
+	// pageElement.append(contenedor);
 }
-
-
 
 // Zoom in / Zoom out
 
-// function zoomTo(event) {
+function zoomTo(event) {
 
-// 		setTimeout(function() {
-// 			if ($('.magazine-viewport').data().regionClicked) {
-// 				$('.magazine-viewport').data().regionClicked = false;
-// 			} else {
-// 				if ($('.magazine-viewport').zoom('value')==1) {
-// 					$('.magazine-viewport').zoom('zoomIn', event);
-// 				} else {
-// 					$('.magazine-viewport').zoom('zoomOut');
-// 				}
-// 			}
-// 		}, 1);
+		setTimeout(function() {
+			if ($('.magazine-viewport').data().regionClicked) {
+				$('.magazine-viewport').data().regionClicked = false;
+			} else {
+				if ($('.magazine-viewport').zoom('value')==1) {
+					$('.magazine-viewport').zoom('zoomIn', event);
+				} else {
+					$('.magazine-viewport').zoom('zoomOut');
+				}
+			}
+		}, 1);
 
-// }
+}
 
 
 
 // Load regions
 
+// function loadRegions(page, element) {
+
+// 	$.getJSON('../pages/'+page+'-regions.json')
+// 		.done(function(data) {
+// 			$.each(data, function(key, region) {
+// 				let newElement =  $('<div></div>')
+// 				.addClass(region.class)
+// 				.css({
+// 					width: region.width + 'px',  // Establecer el ancho
+// 					height: region.height + 'px', // Establecer la altura
+// 					position: 'absolute',
+// 					left: region.x + 'px', // Posición en X
+// 					top: region.y + 'px',  // Posición en Y
+// 					background: 'blue', // Color azul
+// 					opacity: 0.5, // Para que no cubra completamente la vista
+// 					cursor: 'pointer',
+// 					zIndex: 999999
+// 				})
+// 				alert('test')
+			
+// 			$(element).append(newElement);
+// 			});
+
+// 		});
+// 		return element
+// }
+
+
+// ANTIGUO 
 function loadRegions(page, element) {
-	$.getJSON('pages/'+page+'-regions.json').
-	done(function(data) {
-		
-		$.each(data, function(key, region) {
-			addRegion(region, element);
+	console.log(page)
+	// $.getJSON('../pages/1-regions.json').done(function(data) {
+	$.getJSON('../pages/'+page+'-regions.json').done(function(data) {
+			console.log('test')
+			$.each(data, function(key, region) {
+				addRegion(region, element);
+			});
 		});
-	});
 }
 
-// Add region
 
+
+// ANTIGUO
+// Add region
 function addRegion(region, pageElement) {
-	
-	
+	console.log("Agregando región:", region);
 	var reg = $('<div />', {'class': 'region  ' + region['class']}),
 		options = $('.magazine').turn('options'),
 		pageWidth = options.width/2,
@@ -1088,8 +925,7 @@ function addRegion(region, pageElement) {
 		top: Math.round(region.y/pageHeight*100)+'%',
 		left: Math.round(region.x/pageWidth*100)+'%',
 		width: Math.round(region.width/pageWidth*100)+'%',
-		height: Math.round(region.height/pageHeight*100)+'%',
-
+		height: Math.round(region.height/pageHeight*100)+'%'
 	}).attr('region-data', $.param(region.data||''));
 
 
@@ -1098,148 +934,26 @@ function addRegion(region, pageElement) {
 
 // Process click on a region
 
-
 function regionClick(event) {
 
 	var region = $(event.target);
-	// verifico si tiene la clase region
+
 	if (region.hasClass('region')) {
-		// 
+
 		$('.magazine-viewport').data().regionClicked = true;
 		
-
 		setTimeout(function() {
 			$('.magazine-viewport').data().regionClicked = false;
 		}, 100);
 		
 		var regionType = $.trim(region.attr('class').replace('region', ''));
-		
-		// ////////////////////////////////////////////
-		// var regionData = region.attr('region-data');
-		// var regionInfo = regionData ? Object.fromEntries(new URLSearchParams(regionData)) : {};
-		// console.log("Datos de la región:", regionInfo);
-		// // Si existe un video en la región, creamos el elemento dinámicamente
-		// if (regionInfo.video) {
-		// 	console.log('funciona')
-		// 	createVideoElement(regionInfo.video);
-		// }
-		// ///////////////////////////////////////////
+
 		return processRegion(region, regionType);
+
 	}
 
 }
 
-function createVideoElement(videoUrl) {
-    // Si ya existe un video en el body, lo eliminamos
-    $('#video-container').remove();
-    // Crear contenedor principal del video
-    var videoContainer = $('<div />', {
-        id: 'video-container',
-    });
-    // Crear div interno para organizar los elementos del video
-    var elementosVideo = $('<div />', {
-        id: 'elementosVideo'
-    });
-    // Crear el elemento de video
-    var videoElement = $('<video />', {
-        id: 'miVideo',
-        src: videoUrl,
-        muted: true,
-    });
-	// Crear el triángulo de Play
-	var playButton = $('<div />', {
-		id: 'play-button',
-		css: {
-			position: 'absolute',
-			top: '50%',
-			left: '50%',
-			transform: 'translate(-50%, -50%)',
-
-			width: '0',
-			height: '0',
-			borderLeft: '130px solid white',
-			borderTop: '80px solid transparent',
-			borderBottom: '80px solid transparent',
-			cursor: 'pointer',
-			zIndex: '999999999999999999999999999'
-		}
-	});
-    // Crear botón de cierre
-    var closeButton = $('<div />', {
-        id: 'cerrar-video',
-        text: 'X',
-        click: function () {
-            $('#video-container').remove(); // Elimina el contenedor al hacer clic
-        }
-    });
-    // Crear barra deslizadora
-    var progressBar = $('<input />', {
-        type: 'range',
-        id: 'barra-deslizable',
-        min: '0',
-        max: '100',
-        value: '0',
-    });
-    // Agregar elementos al contenedor
-	elementosVideo.append(videoElement, playButton, closeButton, progressBar);
-    videoContainer.append(elementosVideo);
-
-    // Agregar el contenedor directamente al body
-    $('body').append(videoContainer);
-
-	agregarFuncionesVideo(videoElement, closeButton, progressBar,playButton);
-	
-}
-
-function agregarFuncionesVideo(videoElement, closeButton, progressBar,playButton) {
-	playButton.on("click", function() {
-        if (videoElement[0].paused) {
-            videoElement[0].play();
-			$("#play-button").css("animation", "play 0.5s ease-in-out forwards");
-			setTimeout(() => {
-				$("#play-button").remove();
-			}, 500);
-        } else {
-            videoElement[0].pause();
-        }
-    });
-    // Alternar play/pause al hacer clic en el video
-    videoElement.on("click", function() {
-        if (videoElement[0].paused) {
-            videoElement[0].play();
-			$("#play-button").css("animation", "play 0.5s ease-in-out forwards");
-			setTimeout(() => {
-				$("#play-button").remove();
-			}, 500);
-        } else {
-            videoElement[0].pause();
-        }
-    });
-
-    // Cerrar el contenedor del video al hacer clic en la "X"
-    closeButton.on("click", function() {
-        $('#video-container').remove(); // Elimina completamente el div de la página
-    });
-
-    // Actualiza la barra de progreso mientras el video se reproduce
-    videoElement.on("timeupdate", function() {
-        const progreso = (videoElement[0].currentTime / videoElement[0].duration) * 100;
-        progressBar.val(progreso); // Actualiza la barra
-    });
-
-    // Permite que el usuario controle el video con el slider
-    progressBar.on("input", function() {
-        const nuevoTiempo = (progressBar.val() / 100) * videoElement[0].duration;
-        videoElement[0].currentTime = nuevoTiempo;
-    });
-
-    // Si el video no está reproduciéndose, al mover el slider se actualiza el video manualmente
-    progressBar.on("change", function() {
-        if (videoElement[0].paused) {
-            videoElement[0].play();
-        }
-    });
-}
 // Process the data of every region
 
 function processRegion(region, regionType) {
@@ -1248,22 +962,20 @@ function processRegion(region, regionType) {
 
 	switch (regionType) {
 		case 'link' :
-
 			window.open(data.url);
+		break;
+		case 'zoom' :
+
+			var regionOffset = region.offset(),
+				viewportOffset = $('.magazine-viewport').offset(),
+				pos = {
+					x: regionOffset.left-viewportOffset.left,
+					y: regionOffset.top-viewportOffset.top
+				};
+
+			$('.magazine-viewport').zoom('zoomIn', pos);
 
 		break;
-		// case 'zoom' :
-
-		// 	var regionOffset = region.offset(),
-		// 		viewportOffset = $('.magazine-viewport').offset(),
-		// 		pos = {
-		// 			x: regionOffset.left-viewportOffset.left,
-		// 			y: regionOffset.top-viewportOffset.top
-		// 		};
-
-		// 	$('.magazine-viewport').zoom('zoomIn', pos);
-
-		// break;
 		case 'to-page' :
 
 			$('.magazine').turn('page', data.page);
@@ -1279,7 +991,7 @@ function loadLargePage(page, pageElement) {
 	
 	var img = $('<img />');
 
-	img.on('load', function() {
+	img.load(function() {
 
 		var prevImg = pageElement.find('img');
 		$(this).css({width: '100%', height: '100%'});
@@ -1301,18 +1013,29 @@ function loadSmallPage(page, pageElement) {
 
 	img.css({width: '100%', height: '100%'});
 
-	img.off('load');
+	img.unbind('load');
 	// Loadnew page
 
 	img.attr('src', 'pages/' +  page + '.jpg');
 }
+
+// http://code.google.com/p/chromium/issues/detail?id=128488
+
 function isChrome() {
 
 	return navigator.userAgent.indexOf('Chrome')!=-1;
 
 }
 
-// Set the width and height for the viewport
+// let contenedor = document.querySelector('.magazine-viewport');
+
+// if (contenedor) {
+// 	contenedor.scrollTo({
+// 		left: 2000, 
+// 		behavior: 'smooth' 
+// 	});
+// }
+
 function disableControls(page) {
     // Verifica si la página actual es la primera
     if (page == 1) {
@@ -1342,6 +1065,10 @@ function disableControls(page) {
 }
 
 
+
+
+// Set the width and height for the viewport
+
 function resizeViewport() {
 
 	var width = $(window).width(),
@@ -1354,7 +1081,6 @@ function resizeViewport() {
 		width: width,
 		height: height
 	}).
-
 	zoom('resize');
 
 
@@ -1381,7 +1107,7 @@ function resizeViewport() {
 			$('.previous-button').css({height: bound.height, backgroundPosition: '-4px '+(bound.height/2-32/2)+'px'});
 		}
 
-				// $('.magazine').css({top: -bound.height/2, left: -bound.width/2});
+		// $('.magazine').css({top: -bound.height/2, left: -bound.width/2});
 		// $('.magazine').css({top: -bound.height/4, left: -bound.width/4});
 		$('.magazine').css({
 			top: -bound.height / 2,
@@ -1389,7 +1115,6 @@ function resizeViewport() {
 
 			// transform: 'rotate(-90deg)'
 		});
-		// $('.magazine').css({top: -bound.height/2, left: -bound.width/2});
 	}
 
 	var magazineOffset = $('.magazine').offset(),
@@ -1426,7 +1151,9 @@ function getViewNumber(book, page) {
 }
 
 function moveBar(yes) {
-	$('#slider .ui-slider-handle').css({zIndex: yes ? -1 : 10000});
+	if (Modernizr && Modernizr.csstransforms) {
+		$('#slider .ui-slider-handle').css({zIndex: yes ? -1 : 10000});
+	}
 }
 
 function setPreview(view) {
@@ -1516,6 +1243,96 @@ function calculateBound(d) {
 }
 
 
+let flecha = document.getElementById('flechaMenu');
+let menu = document.querySelector('.menu');
+let menuAbierto = false;
+
+flecha.addEventListener('click', function(){
+    if (menuAbierto) {
+        menu.style.left = '0rem';
+        flecha.classList.remove('bi-chevron-compact-right');
+        flecha.classList.add('bi-chevron-compact-left');
+    } else {
+        menu.style.left = '-14rem';
+        flecha.classList.remove('bi-chevron-compact-left');
+        flecha.classList.add('bi-chevron-compact-right');
+		
+    }
+    
+    menuAbierto = !menuAbierto;
+});
+// flecha.click();
+
+
+setTimeout(function() {
+    flecha.click();
+}, 8000);
+
+
+
+
+
+
+
+gsap.fromTo(
+	".loading-page",
+	{ opacity: 1 },
+	{
+	  opacity: 0,
+	  display: "none",
+	  duration: 1.5,
+	  delay: 3.5,
+	}
+  );
+  
+  gsap.fromTo(
+	".logo-name",
+	{
+	  y: 50,
+	  opacity: 0,
+	},
+	{
+	  y: 0,
+	  opacity: 1,
+	  duration: 2,
+	  delay: 0.5,
+	}
+  );
+  
+  gsap.fromTo(
+	".logo-parrafo",
+	{
+	  y: 50,
+	  opacity: 0,
+	},
+	{
+	  y: 0,
+	  opacity: 1,
+	  duration: 2,
+	  delay: 0.5,
+	}
+  );
+  
+
+  document.querySelector("video").playbackRate = 0.7; 
+
+
+
+
+
+
+// Al CAGARSE LA PAGINA SI ESTA ACTIVADO EL SCROLL(es porque esta en responsive) SE MUEVA PARA CENTRARSE
+window.addEventListener('load', () => {
+    const contenedor = document.querySelector('.magazine-viewport'); // Selecciona el elemento con la clase
+    if (contenedor) {
+        contenedor.scrollTo({
+            //left: 1000, // Cambia este valor a la posición deseada en el eje x
+            left: 800, // Cambia este valor a la posición deseada en el eje x
+            behavior: 'smooth' // 'smooth' para desplazamiento suave o 'auto' para instantáneo
+        });
+    }
+});
+
 // RESPONSIVE CLICK FLECHAS
 
 function disableControls(page) {
@@ -1531,18 +1348,29 @@ function disableControls(page) {
 }
 
 
+
+
 $(document).ready(function() {
 	// const contenedor = document.querySelector('.magazine-viewport'); 
-	
     $('.next-button-responsive').on('click', function() {
         $('.next-button').click();
+		// if (document.querySelector('.magazine-viewport')) {
+		// 	document.querySelector('.magazine-viewport').scrollTo({
+		// 		left: 1000, 
+		// 		behavior: 'smooth' 
+		// 	});
+		// }
     });
 });
 $(document).ready(function() {
 	const contenedor = document.querySelector('.magazine-viewport'); 
     $('.previous-button-responsive').on('click', function() {
         $('.previous-button').click();
+		// if (contenedor) {
+		// 	contenedor.scrollTo({
+		// 		left: 250, 
+		// 		behavior: 'smooth' 
+		// 	});
+		// }
     });
 });
-
-
